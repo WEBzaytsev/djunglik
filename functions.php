@@ -230,3 +230,11 @@ if ( file_exists( __DIR__ . '/acf-blocks.php' ) ) {
 		add_action( 'init', 'register_acf_blocks', 5 );
 	}
 }
+
+/**
+ * Register custom GB-block category
+ * see https://support.advancedcustomfields.com/forums/topic/register-custom-gb-block-category/
+ * see https://www.advancedcustomfields.com/resources/acf_register_block_type/
+ */
+
+require get_template_directory() . '/inc/gb-block-category.php';
