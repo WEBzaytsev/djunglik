@@ -1,35 +1,70 @@
 {
-    "name": "automattic/underscores",
+    "name": "djunglik/wordpress-theme",
     "type": "wordpress-theme",
-    "description": "Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.",
+    "description": "",
     "keywords": [
         "WordPress",
         "Themes"
     ],
-    "homepage": "https://github.com/Automattic/_s",
+    "homepage": "https://github.com/WEBzaytsev/djun",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "Contributors",
-            "homepage": "https://github.com/Automattic/_s/graphs/contributors"
+            "name": "WEBzaytsev && Contributors",
+            "homepage": "https://github.com/WEBzaytsev/djun/graphs/contributors"
         }
     ],
     "require": {
-        "php": ">=5.6"
+        "php": ">=7.4"
     },
     "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
         "wptrt/wpthemereview": "^0.2.1",
         "php-parallel-lint/php-parallel-lint": "^1.2.0",
-        "wp-cli/i18n-command": "^2.2.5"
+        "wp-cli/i18n-command": "^2.2.5",
+        "automattic/vipwpcs": "^2.3",
+        "brainmaestro/composer-git-hooks": "^2.8",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+        "ergebnis/composer-normalize": "^2.28",
+        "phpcompatibility/php-compatibility": "*",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "sirbrillig/phpcs-variable-analysis": "*",
+        "wp-cli/wp-cli": "^v2.6.0",
+        "wp-coding-standards/wpcs": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true
+        }
     },
     "scripts": {
+        "post-install-cmd": [
+            "@install-codestandards",
+            "cghooks add --ignore-lock"
+        ],
+        "post-update-cmd": [
+            "cghooks update"
+        ],
+        "blocks:create": "php create-acf-block.php",
+        "blocks:register": "php generate-block-registration.php",
+        "install-codestandards": [
+            "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+        ],
+        "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vector-images --exclude node-modules --exclude vendor .",
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
-        "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-        "make-pot": "wp i18n make-pot . languages/_s.pot"
+        "make-pot": "wp i18n make-pot . languages/djun.pot",
+        "phpcbf": "phpcbf",
+        "phpcbf-wp": [
+            "phpcbf -p -s -v -n ./ --standard=phpcs.xml"
+        ],
+        "phpcs": "phpcs",
+        "phpcs-wp": [
+            "phpcs -p -s -v -n ./ --standard=phpcs.xml"
+        ],
+        "phpcsi": "phpcs -i"
     },
     "support": {
-        "issues": "https://github.com/Automattic/_s/issues",
-        "source": "https://github.com/Automattic/_s"
+        "issues": "https://github.com/WEBzaytsev/djun/issues",
+        "source": "https://github.com/WEBzaytsev/djun"
     }
 }

@@ -21,14 +21,14 @@ function djun_custom_header_setup() {
 		'custom-header',
 		apply_filters(
 			'djun_custom_header_args',
-			array(
+			[
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
 				'wp-head-callback'   => 'djun_header_style',
-			)
+			]
 		)
 	);
 }

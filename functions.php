@@ -7,9 +7,9 @@
  * @package Djunglik
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'DJUNGLIK_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'DJUNGLIK_VERSION', '1.0.0' );
 }
 
 /**
@@ -48,9 +48,9 @@ function djun_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
-		array(
+		[
 			'menu-1' => esc_html__( 'Primary', 'djun' ),
-		)
+		]
 	);
 
 	/*
@@ -59,7 +59,7 @@ function djun_setup() {
 		*/
 	add_theme_support(
 		'html5',
-		array(
+		[
 			'search-form',
 			'comment-form',
 			'comment-list',
@@ -67,7 +67,7 @@ function djun_setup() {
 			'caption',
 			'style',
 			'script',
-		)
+		]
 	);
 
 	// Set up the WordPress core custom background feature.
@@ -75,10 +75,10 @@ function djun_setup() {
 		'custom-background',
 		apply_filters(
 			'djun_custom_background_args',
-			array(
+			[
 				'default-color' => 'ffffff',
 				'default-image' => '',
-			)
+			]
 		)
 	);
 
@@ -92,12 +92,12 @@ function djun_setup() {
 	 */
 	add_theme_support(
 		'custom-logo',
-		array(
+		[
 			'height'      => 250,
 			'width'       => 250,
 			'flex-width'  => true,
 			'flex-height' => true,
-		)
+		]
 	);
 }
 add_action( 'after_setup_theme', 'djun_setup' );
@@ -121,7 +121,7 @@ add_action( 'after_setup_theme', 'djun_content_width', 0 );
  */
 function djun_widgets_init() {
 	register_sidebar(
-		array(
+		[
 			'name'          => esc_html__( 'Sidebar', 'djun' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'djun' ),
@@ -129,23 +129,43 @@ function djun_widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		)
+		]
 	);
 }
 add_action( 'widgets_init', 'djun_widgets_init' );
 
 /**
+ * Get ajax url
+ *
+ * @return string
+ */
+function djun_get_ajax_url():string {
+	return get_template_directory_uri() . '/front-ajaxs.php';
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function djun_scripts() {
-	wp_enqueue_style( 'djun-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'djun-style', 'rtl', 'replace' );
+	$ajax_url = djun_get_ajax_url();
 
-	wp_enqueue_script( 'djun-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	$adapty_options = [
+		'ajax_url' => $ajax_url,
+		'home_url' => get_home_url(),
+	];
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_dequeue_style( 'select2' );
+	wp_dequeue_script( 'select2' );
+	wp_deregister_script( 'select2' );
+	wp_dequeue_script( 'jquery' );
+	wp_deregister_script( 'jquery' );
+
+	wp_enqueue_style( 'djun-style', get_stylesheet_uri(), [], DJUNGLIK_VERSION );
+	wp_enqueue_style( 'main-style', get_template_directory_uri() . '/dist/css/style.min.css', [], DJUNGLIK_VERSION );
+
+	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/dist/js/app.min.js', [], DJUNGLIK_VERSION, true );
+
+	wp_localize_script( 'main-script', 'options', $adapty_options );
 }
 add_action( 'wp_enqueue_scripts', 'djun_scripts' );
 
@@ -176,3 +196,37 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * ACF json save filter.
+ *
+ * @param string $path Path.
+ *
+ * @return string
+ */
+function djun_acf_json_save_point( string $path ): string {
+	return get_stylesheet_directory() . '/acf-json';
+}
+
+add_filter( 'acf/settings/save_json', 'djun_acf_json_save_point' );
+
+if ( function_exists( 'acf_add_options_page' ) ) {
+
+	acf_add_options_page(
+		[
+			'page_title' => 'Theme General Settings',
+			'menu_title' => 'Основные настройки',
+			'menu_slug' => 'theme-general-settings',
+			'capability' => 'edit_posts',
+			'redirect' => false,
+		]
+	);
+}
+
+if ( file_exists( __DIR__ . '/acf-blocks.php' ) ) {
+
+	require get_template_directory() . '/acf-blocks.php';
+
+	if ( function_exists( 'register_acf_blocks' ) ) {
+		add_action( 'init', 'register_acf_blocks', 5 );
+	}
+}

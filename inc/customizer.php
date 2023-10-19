@@ -18,17 +18,17 @@ function djun_customize_register( $wp_customize ) {
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname',
-			array(
+			[
 				'selector'        => '.site-title a',
 				'render_callback' => 'djun_customize_partial_blogname',
-			)
+			]
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
-			array(
+			[
 				'selector'        => '.site-description',
 				'render_callback' => 'djun_customize_partial_blogdescription',
-			)
+			]
 		);
 	}
 }
@@ -56,6 +56,6 @@ function djun_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function djun_customize_preview_js() {
-	wp_enqueue_script( 'djun-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
+	wp_enqueue_script( 'djun-customizer', get_template_directory_uri() . '/js/customizer.js', [ 'customize-preview' ], _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'djun_customize_preview_js' );
