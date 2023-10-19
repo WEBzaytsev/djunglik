@@ -83,6 +83,14 @@ module.exports = {
                 800: '800ms',
                 900: '900ms',
             },
+            colors: {
+                grey: {
+                    DEFAULT: '#333'
+                },
+                red: '#E31C21',
+                beige: '#FCF5EB',
+                ochre: '#FD9B28'
+            },
             fontFamily: {},
             lineHeight: {},
             fontSize: {},
