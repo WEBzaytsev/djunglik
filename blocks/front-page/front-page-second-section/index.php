@@ -22,10 +22,12 @@
  */
 
 $djun_block_slug = 'front-page-second-section';
+$djun_is_admin = is_admin();
 
 $djun_classes = 'relative z-20 -mt-[112px] pt-[155px] pb-[153px]';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
+<?php if ( ! $djun_is_admin ) : ?>
 	<svg viewBox="0 0 1440 893" fill="none" xmlns="http://www.w3.org/2000/svg"
 		 class="absolute z-10 w-full h-full top-0 left-1/2 -translate-x-1/2">
 		<path d="M1606.46 135.357C1850.77 229.287 1919.75 359.176 1885.97 486.666C1850.21 621.601 1739.88 761.974 1420.86 835.813C1091.3 912.091 665.693 905.902 301.318 853.441C-49.7798 802.89 -321.043 699.108 -427.708 569.659C-530.311 445.14 -432.998 314.467 -231.966 206.246C-32.3161 98.7687 266.528 16.1853 626.189 2.31702C991.934 -11.7859 1356.42 39.2226 1606.46 135.357Z"
@@ -35,23 +37,29 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	<div class="absolute z-30 top-auto left-auto -right-[90px] -bottom-[80px]">
 		<?php get_template_part( '/vector-images/front-page-second-section', 'leave' ); ?>
 	</div>
+<?php endif; ?>
+
 
 	<div class="max-w-huge mx-auto relative z-20">
 		<div class="flex gap-x-[160px]">
 			<?php $djun_kartinka = get_field( 'kartinka' ); ?>
 			<?php if ( $djun_kartinka ) : ?>
 				<div class="relative">
-					<div class="absolute z-10 top-auto left-auto -bottom-5 -right-[94px]">
-						<?php get_template_part( '/vector-images/front-page-second-section', 'img-bg' ); ?>
-					</div>
+					<?php if ( ! $djun_is_admin ) : ?>
+						<div class="absolute z-10 top-auto left-auto -bottom-5 -right-[94px]">
+							<?php get_template_part( '/vector-images/front-page-second-section', 'img-bg' ); ?>
+						</div>
+						<div class="absolute z-30 top-auto -left-7.5 -bottom-5">
+							<?php get_template_part( '/vector-images/front-page-second-section', 'img-leaves' ); ?>
+						</div>
+					<?php endif; ?>
+
 					<img src="<?php echo esc_url( $djun_kartinka['url'] ); ?>"
 						 class="relative z-20"
 						 width="<?php echo esc_attr( $djun_kartinka['width'] / 2 ); ?>"
 						 height="<?php echo esc_attr( $djun_kartinka['height'] / 2 ); ?>"
 						 alt="<?php echo esc_attr( $djun_kartinka['alt'] ); ?>"/>
-					<div class="absolute z-30 top-auto -left-7.5 -bottom-5">
-						<?php get_template_part( '/vector-images/front-page-second-section', 'img-leaves' ); ?>
-					</div>
+
 				</div>
 			<?php endif; ?>
 			<div class="pt-12 max-w-md">

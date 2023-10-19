@@ -22,19 +22,24 @@
  */
 
 $djun_block_slug = 'front-page-first-section';
+$djun_is_admin = is_admin();
 
 $djun_classes = 'relative pt-[140px] pb-[185px] z-10';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
+<?php if ( ! $djun_is_admin ) : ?>
 	<div class="absolute z-10 -left-[100px] -bottom-[205px] top-auto">
 		<?php get_template_part( '/vector-images/front-page-first-section', 'leaves' ); ?>
 	</div>
+<?php endif; ?>
 
 	<div class="max-w-huge mx-auto relative z-30">
-		<div class="absolute z-10 -right-[152px] -bottom-[311px] top-auto">
-			<?php get_template_part( '/vector-images/front-page-first-section', 'main-img' ); ?>
-		</div>
+		<?php if ( ! $djun_is_admin ) : ?>
+			<div class="absolute z-10 -right-[152px] -bottom-[311px] top-auto">
+				<?php get_template_part( '/vector-images/front-page-first-section', 'main-img' ); ?>
+			</div>
+		<?php endif; ?>
 		<div class="max-w-[568px] relative z-20">
 			<h1 class="mb-6 font-bold text-heading-1-pc font-unbounded">
 				<?php the_field( 'zagolovok' ); ?>

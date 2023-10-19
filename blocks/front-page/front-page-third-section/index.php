@@ -22,6 +22,7 @@
  */
 
 $djun_block_slug = 'front-page-third-section';
+$djun_is_admin = is_admin();
 
 $djun_classes = 'relative z-10 mt-[148px] pb-[255px]';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
@@ -70,9 +71,11 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 					?>
 
 					<div class="relative <?php echo esc_attr( $djun_item_z_index ); ?> ">
-						<div class="absolute z-20 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                            <?php echo $djun_item_bg; // phpcs:ignore ?>
-						</div>
+						<?php if ( ! $djun_is_admin ) : ?>
+							<div class="absolute z-20 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                                <?php echo $djun_item_bg; // phpcs:ignore ?>
+							</div>
+						<?php endif; ?>
 						<div class="relative z-30 max-w-[400px]">
 							<p class="mb-6 font-bold text-heading-2-pc font-unbounded">
 								<?php echo esc_html( $djun_item_title ); ?>
@@ -84,19 +87,23 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 					</div>
 					<?php $djun_item_count++; ?>
 				<?php endwhile; ?>
-				<div class="absolute z-50 left-[355px] top-auto bottom-[138px]">
-					<?php get_template_part( '/vector-images/monkey' ); ?>
-				</div>
+				<?php if ( ! $djun_is_admin ) : ?>
+					<div class="absolute z-50 left-[355px] top-auto bottom-[138px]">
+						<?php get_template_part( '/vector-images/monkey' ); ?>
+					</div>
+				<?php endif; ?>
 			</div>
 		<?php endif; ?>
 	</div>
 
+<?php if ( ! $djun_is_admin ) : ?>
 	<div class="absolute z-20 top-auto -left-[150px] -bottom-[203px]">
 		<?php get_template_part( '/vector-images/front-page-third-section-leaves', 'left' ); ?>
 	</div>
 	<div class="absolute z-20 top-auto left-auto -right-[94px] -bottom-[130px]">
 		<?php get_template_part( '/vector-images/front-page-third-section-leaves', 'right' ); ?>
 	</div>
+<?php endif; ?>
 <?php
 
 /**
