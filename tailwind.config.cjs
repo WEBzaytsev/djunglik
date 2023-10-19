@@ -122,7 +122,7 @@ module.exports = {
         },
     },
     plugins: [
-        require( '@_tw/themejson' )( require( './theme.json' ) ),
+        // require( '@_tw/themejson' )( require( './theme.json' ) ),
     ],
     corePlugins: {
         // preflight: false,
