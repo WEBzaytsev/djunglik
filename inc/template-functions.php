@@ -35,3 +35,44 @@ function djun_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'djun_pingback_header' );
+
+/**
+ * Start custom block
+ *
+ * @param array       $block The block settings and attributes.
+ * @param string      $block_slug Block slug.
+ * @param string|null $additional_classes Block css classes.
+ * @return void
+ */
+function djun_custom_block_start( $block, string $block_slug, ?string $additional_classes ) {
+	$classes = 'block-' . $block_slug;
+	if ( ! empty( $block['className'] ) ) {
+		$classes .= ' ' . $block['className'];
+	}
+
+	echo sprintf(
+		'<section class="%s" id="%s">',
+		esc_attr( $classes . ' ' . $additional_classes ),
+		esc_attr( $block['id'] ),
+	);
+}
+
+add_action( 'djun_custom_block_init', 'djun_custom_block_start', 10, 4 );
+
+/**
+ * End custom block.
+ *
+ * @return void
+ */
+function djun_custom_block_end(): void {
+
+	global $djun_is_first_block_on_page;
+
+	if ( isset( $djun_is_first_block_on_page ) && true === $djun_is_first_block_on_page ) {
+		$djun_is_first_block_on_page = false;
+	}
+
+	echo '</section>';
+}
+
+add_action( 'djun_custom_block_close', 'djun_custom_block_end', 10 );
