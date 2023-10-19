@@ -98,7 +98,9 @@ module.exports = {
                 'heading-2-pc': ['32px', '140%'],
                 'pure-text-pc': ['18px', '175%'],
             },
-            borderRadius: {},
+            borderRadius: {
+                60: '60px'
+            },
             boxShadow: {},
             maxWidth: {
                 12: '192px',
