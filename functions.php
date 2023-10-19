@@ -238,3 +238,11 @@ if ( file_exists( __DIR__ . '/acf-blocks.php' ) ) {
  */
 
 require get_template_directory() . '/inc/gb-block-category.php';
+
+/**
+ * Create custom post types
+ */
+
+require get_template_directory() . '/inc/custom-post-type.php';
+
+add_action( 'init', 'djun_review_post_type' );
