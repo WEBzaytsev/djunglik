@@ -1,0 +1,15 @@
+{
+    "name": "acf/front-page-first-section",
+    "title": "Front Page First Section",
+    "description": "Front Page First Section",
+    "category": "front-page",
+    "icon": "align-left",
+    "apiVersion": 2,
+    "keywords": [
+        "front page first section"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php"
+    }
+}
