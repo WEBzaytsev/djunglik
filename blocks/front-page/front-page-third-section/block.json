@@ -1,0 +1,15 @@
+{
+    "name": "acf/front-page-third-section",
+    "title": "Front Page Third Section",
+    "description": "Front Page Third Section",
+    "category": "front-page",
+    "icon": "align-left",
+    "apiVersion": 2,
+    "keywords": [
+        "front page third section"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php"
+    }
+}

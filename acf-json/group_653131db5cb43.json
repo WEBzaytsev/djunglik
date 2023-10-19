@@ -1,0 +1,130 @@
+{
+    "key": "group_653131db5cb43",
+    "title": "Block | Front Page | Third Section",
+    "fields": [
+        {
+            "key": "field_653131dc45e05",
+            "label": "Заголовок",
+            "name": "zagolovok",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_6531323a45e06",
+            "label": "Список",
+            "name": "spisok",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6531325645e07",
+                    "label": "Заголовок",
+                    "name": "zagolovok",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_6531323a45e06"
+                },
+                {
+                    "key": "field_6531326a45e08",
+                    "label": "Текст",
+                    "name": "tekst",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 7,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_6531323a45e06"
+                },
+                {
+                    "key": "field_653133b8faa36",
+                    "label": "Цвет фона",
+                    "name": "czvet_fona",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "parent_repeater": "field_6531323a45e06"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/front-page-third-section"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1697730835
+}
