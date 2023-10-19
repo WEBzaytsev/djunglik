@@ -93,7 +93,11 @@ module.exports = {
             },
             fontFamily: {},
             lineHeight: {},
-            fontSize: {},
+            fontSize: {
+                'heading-1-pc': ['48px', '140%'],
+                'heading-2-pc': ['32px', '140%'],
+                'pure-text-pc': ['18px', '175%'],
+            },
             borderRadius: {},
             boxShadow: {},
             maxWidth: {
