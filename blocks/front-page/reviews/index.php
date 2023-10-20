@@ -126,16 +126,16 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	</div>
 
 	<div class="relative z-30 max-w-huge mx-auto w-full flex items-end justify-between">
-		<div class="swiper-pagination flex gap-x-5.5"></div>
+		<div class="reviews-slider-pagination flex gap-x-5.5"></div>
 
 		<div class="flex items-center gap-x-12">
-			<svg width="22" height="39" class="slider-button-prev cursor-pointer" viewBox="0 0 22 39" fill="none"
+			<svg width="22" height="39" class="reviews-slider-button-prev cursor-pointer" viewBox="0 0 22 39" fill="none"
 				 xmlns="http://www.w3.org/2000/svg">
 				<path d="M19 3L3 19.5L19 36" stroke="white" stroke-width="5" stroke-linecap="round"
 					  stroke-linejoin="round"/>
 			</svg>
 
-			<svg class="slider-button-next cursor-pointer" width="22" height="39" viewBox="0 0 22 39" fill="none"
+			<svg class="reviews-slider-button-next cursor-pointer" width="22" height="39" viewBox="0 0 22 39" fill="none"
 				 xmlns="http://www.w3.org/2000/svg">
 				<path d="M3 3L19 19.5L3 36" stroke="white" stroke-width="5" stroke-linecap="round"
 					  stroke-linejoin="round"/>

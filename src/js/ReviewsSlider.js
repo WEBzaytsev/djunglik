@@ -19,7 +19,7 @@ export const ReviewsSlider = () => {
 		noSwiping: false,
 		slidesPerView: 'auto',
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.reviews-slider-pagination',
 			type: 'bullets',
 			bulletActiveClass: 'active',
 			bulletClass:
@@ -27,8 +27,8 @@ export const ReviewsSlider = () => {
 			clickable: true,
 		},
 		navigation: {
-			nextEl: '.slider-button-next',
-			prevEl: '.slider-button-prev',
+			nextEl: '.reviews-slider-button-next',
+			prevEl: '.reviews-slider-button-prev',
 		},
 	});
 };
