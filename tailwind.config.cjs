@@ -78,7 +78,8 @@ module.exports = {
             },
             colors: {
                 grey: {
-                    DEFAULT: '#333'
+                    DEFAULT: '#333',
+                    600: '#666'
                 },
                 red: '#E31C21',
                 beige: '#FCF5EB',
