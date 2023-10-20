@@ -90,7 +90,9 @@ module.exports = {
             fontSize: {
                 'heading-1-pc': ['48px', '140%'],
                 'heading-2-pc': ['32px', '140%'],
+                'heading-3-pc': ['24px', '140%'],
                 'pure-text-pc': ['18px', '175%'],
+                'sm': ['14px', '175%'],
             },
             borderRadius: {
                 60: '60px'
