@@ -24,13 +24,19 @@
 $djun_block_slug = 'front-page-fourth-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-20 -mt-[157px] pt-[180px] pb-[253px]';
+$djun_classes = 'relative z-20 mt-5 pt-4.5 pb-[263px] bg-white';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 <?php if ( ! $djun_is_admin ) : ?>
-	<svg class="absolute z-10 w-full h-full top-0 left-1/2 -translate-x-1/2"
-		 viewBox="0 0 1440 1202" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<svg class="absolute block top-auto bottom-full left-0 w-full h-auto"
+		 viewBox="0 0 1440 163" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M1643.46 182.194C1887.77 308.627 1956.75 483.46 1922.97 655.065C1887.21 836.69 1776.88 1025.64 1457.86 1125.02C1128.3 1227.7 702.693 1219.37 338.318 1148.75C-12.7798 1080.71 -284.043 941.016 -390.708 766.776C-493.311 599.169 -395.998 423.28 -194.966 277.612C4.6839 132.945 303.528 21.7859 663.189 3.11877C1028.93 -15.8641 1393.42 52.7946 1643.46 182.194Z"
+			  fill="white"/>
+	</svg>
+
+	<svg class="absolute block top-full left-0 w-full h-auto"
+		 viewBox="0 0 1440 158" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M1643.46 -861.806C1887.77 -735.373 1956.75 -560.54 1922.97 -388.935C1887.21 -207.31 1776.88 -18.3646 1457.86 81.0245C1128.3 183.697 702.693 175.367 338.318 104.752C-12.7798 36.7098 -284.043 -102.984 -390.708 -277.224C-493.311 -444.831 -395.998 -620.72 -194.966 -766.388C4.6839 -911.055 303.528 -1022.21 663.189 -1040.88C1028.93 -1059.86 1393.42 -991.205 1643.46 -861.806Z"
 			  fill="white"/>
 	</svg>
 <?php endif; ?>

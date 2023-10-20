@@ -24,7 +24,7 @@
 $djun_block_slug = 'front-page-first-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative pt-[140px] pb-[185px] z-10';
+$djun_classes = 'relative pt-[140px] pb-[207px] z-10';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
