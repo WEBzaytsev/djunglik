@@ -1,0 +1,15 @@
+{
+    "name": "acf/reviews",
+    "title": "Reviews",
+    "description": "Reviews",
+    "category": "front-page",
+    "icon": "align-left",
+    "apiVersion": 2,
+    "keywords": [
+        "reviews"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php"
+    }
+}
