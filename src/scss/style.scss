@@ -32,3 +32,7 @@ html {
 .reviews-slider-pagination > span.active {
   opacity: 1;
 }
+
+.news-slider-pagination > span.active {
+  @apply bg-ochre;
+}

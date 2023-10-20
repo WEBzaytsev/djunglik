@@ -1,0 +1,15 @@
+{
+    "name": "acf/news",
+    "title": "News",
+    "description": "News",
+    "category": "other",
+    "icon": "align-left",
+    "apiVersion": 2,
+    "keywords": [
+        "news"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php"
+    }
+}

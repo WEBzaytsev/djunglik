@@ -83,7 +83,10 @@ module.exports = {
                 },
                 red: '#E31C21',
                 beige: '#FCF5EB',
-                ochre: '#FD9B28'
+                ochre: '#FD9B28',
+                green: {
+                    800: '#046E52',
+                }
             },
             fontFamily: {},
             lineHeight: {},
@@ -91,11 +94,13 @@ module.exports = {
                 'heading-1-pc': ['48px', '140%'],
                 'heading-2-pc': ['32px', '140%'],
                 'heading-3-pc': ['24px', '140%'],
+                'heading-4-pc': ['20px', '140%'],
                 'pure-text-pc': ['18px', '175%'],
                 'sm': ['14px', '175%'],
             },
             borderRadius: {
-                60: '60px'
+                60: '60px',
+                25: '25px',
             },
             boxShadow: {},
             maxWidth: {
