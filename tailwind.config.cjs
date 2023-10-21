@@ -97,6 +97,7 @@ module.exports = {
                 'heading-4-pc': ['20px', '140%'],
                 'pure-text-pc': ['18px', '175%'],
                 'sm': ['14px', '175%'],
+                'xs': ['12px', '175%'],
             },
             borderRadius: {
                 60: '60px',
