@@ -50,6 +50,7 @@ function djun_setup() {
 	register_nav_menus(
 		[
 			'menu-1' => esc_html__( 'main-menu', 'djun' ),
+			'menu-footer' => esc_html__( 'footer-menu', 'djun' ),
 		]
 	);
 
