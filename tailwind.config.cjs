@@ -5,7 +5,8 @@ module.exports = {
     },
     mode: "jit",
     content: [
-        '{,!(vendor)/**/}**/*.php',
+        '**/*.php',
+        '!vendor/**/*.php',
         './src/js/**/*.js',
         './src/scss/**/*.scss',
     ],
