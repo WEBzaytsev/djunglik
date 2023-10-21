@@ -36,7 +36,7 @@
 					wp_nav_menu(
 						[
 							'theme_location' => 'menu-1',
-							'menu_id' => 'primary-menu',
+							'menu_id' => 'main-menu',
 						]
 					);
 					?>
