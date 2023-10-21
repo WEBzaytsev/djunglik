@@ -24,7 +24,7 @@
 $djun_block_slug = 'feedback-form';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative bg-white pt-14 pb-[200px]';
+$djun_classes = 'relative bg-white pt-14 xl:pb-[200px] pb-[360px] px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -43,15 +43,15 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	<div class="max-w-huge mx-auto relative z-20">
 		<div class="flex w-full justify-between gap-x-10">
 			<div class="max-w-[568px]">
-				<h2 class="text-heading-1-pc font-bold font-unbounded mb-7.5">
+				<h2 class="xl:text-heading-1-pc text-heading-2-pc font-bold font-unbounded mb-7.5">
 					<?php the_field( 'zagolovok_bloka' ); ?>
 				</h2>
 				<p class="text-pure-text-pc">
 					<?php the_field( 'tekst' ); ?>
 				</p>
 			</div>
-			<form class="max-w-[604px] shrink-0 grow-0 w-full">
-				<p class="text-center font-bold font-unbounded text-heading-2-pc mb-10.5">
+			<form class="xl:max-w-[604px] max-w-[550px] shrink-0 grow-0 w-full">
+				<p class="text-center font-bold font-unbounded xl:text-heading-2-pc text-heading-3-pc mb-10.5">
 					<?php the_field( 'zagolovok_formy' ); ?>
 				</p>
 				<div class="mb-6">

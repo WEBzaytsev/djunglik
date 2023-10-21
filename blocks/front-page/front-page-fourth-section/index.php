@@ -24,7 +24,7 @@
 $djun_block_slug = 'front-page-fourth-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-20 mt-5 pt-4.5 pb-[263px] bg-white';
+$djun_classes = 'relative z-20 xl:mt-5 xl:pt-4.5 pb-[263px] bg-white px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 <?php if ( ! $djun_is_admin ) : ?>
@@ -44,7 +44,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	<div class="relative z-30 max-w-huge mx-auto">
 		<div class="flex items-center gap-x-[62px]">
 			<div class="max-w-[386px] shrink-0 grow-0">
-				<h3 class="font-unbounded text-heading-2-pc mb-8 font-bold">
+				<h3 class="font-unbounded xl:text-heading-2-pc text-heading-3-pc mb-8 font-bold">
 					<?php the_field( 'zagolovok' ); ?>
 				</h3>
 				<p class="text-pure-text-pc">
@@ -87,7 +87,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	<div class="absolute z-30 -left-[104px] -bottom-[121px] top-auto">
 		<?php get_template_part( '/vector-images/front-page-fourth-section-leaves-left' ); ?>
 	</div>
-	<div class="absolute z-30 left-auto right-0 top-auto bottom-0">
+	<div class="absolute z-30 left-auto right-0 top-auto xl:bottom-0 -bottom-25">
 		<?php get_template_part( '/vector-images/front-page-fourth-section-lion' ); ?>
 	</div>
 <?php endif; ?>

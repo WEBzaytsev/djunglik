@@ -24,7 +24,7 @@
 $djun_block_slug = 'reviews';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-30 mt-10 pt-[78px] pb-25 bg-ochre';
+$djun_classes = 'relative z-30 mt-10 pt-[78px] pb-25 bg-ochre px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -42,7 +42,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 <?php endif; ?>
 
 	<div class="flex max-w-[1241px] mx-auto w-full items-center justify-between mb-15.5">
-		<h2 class="text-white font-bold text-heading-1-pc font-unbounded">
+		<h2 class="text-white font-bold xl:text-heading-1-pc text-heading-2-pc font-unbounded">
 			<?php the_field( 'zagolovok' ); ?>
 		</h2>
 		<?php $djun_knopka = get_field( 'knopka' ); ?>
@@ -63,14 +63,14 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	<div class="max-w-huge mx-auto relative z-10 pb-15">
 		<?php if ( have_rows( 'spisok_otzyvov' ) ) : ?>
 			<div class="reviews-slider">
-				<div class="max-w-[710px]">
+				<div class="xl:max-w-[710px] max-w-[500px]">
 					<?php
 					while ( have_rows( 'spisok_otzyvov' ) ) :
 						the_row();
 						?>
 						<?php $djun_otzyv_id = get_sub_field( 'otzyv' ); ?>
 						<?php if ( $djun_otzyv_id ) : ?>
-							<div class="bg-white p-12.5 rounded-[25px] mr-8 h-auto">
+							<div class="bg-white xl:p-12.5 p-8 rounded-[25px] mr-8 h-auto">
 								<div class="flex items-center gap-x-8">
 									<?php $djun_avatarka = get_field( 'avatarka', $djun_otzyv_id ); ?>
 									<?php if ( $djun_avatarka ) : ?>
@@ -81,7 +81,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 									<?php endif; ?>
 
 									<div class="">
-										<p class="font-unbounded text-heading-3-pc mb-2.5 font-bold">
+										<p class="font-unbounded xl:text-heading-3-pc text-heading-4-pc mb-2.5 font-bold">
 											<?php echo get_the_title( $djun_otzyv_id ); // phpcs:ignore ?>
 										</p>
 										<div class="flex items-center gap-x-4">
@@ -96,13 +96,11 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 												<?php endfor; ?>
 											</div>
 
-											<span class="text-grey-600 text-sm">
-										<?php the_field( 'data', $djun_otzyv_id ); ?>
-									</span>
+											<span class="text-grey-600 text-sm"><?php the_field( 'data', $djun_otzyv_id ); ?></span>
 										</div>
 									</div>
 								</div>
-								<p class="mt-8">
+								<p class="xl:mt-8 mt-4">
 									<?php
 									$djun_text = get_field( 'tekst', $djun_otzyv_id );
 									$djun_max_words = 28;

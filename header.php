@@ -24,11 +24,12 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 
-	<header class="max-w-huge mx-auto">
-		<div class="flex items-center w-full justify-between">
-			<div class="flex items-center gap-x-16.5">
+	<header class="px-5">
+		<div class="max-w-huge mx-auto flex items-center w-full justify-between">
+			<div class="flex items-center xl:gap-x-16.5 gap-x-6">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<img src="<?php echo esc_url( get_field( 'logotip_dlya_shapki', 'option' )['url'] ); ?>"
+						 class="xl:w-auto w-[174px]"
 						 alt="img">
 				</a>
 				<nav class="main-navigation">
@@ -51,7 +52,7 @@
 						  fill="#FEE6A6"/>
 				</svg>
 				<a href="tel:<?php echo esc_attr( get_field( 'telefon', 'option' ) ); ?>"
-				   class="block mb-2 font-unbounded hover:underline text-black text-heading-4-pc font-bold relative z-20">
+				   class="block xl:mb-2 font-unbounded hover:underline text-black xl:text-heading-4-pc text-pure-text-pc font-bold relative z-20">
 					<?php echo esc_html( get_field( 'telefon', 'option' ) ); ?>
 				</a>
 				<p class="text-black font-unbounded text-sm relative z-20">

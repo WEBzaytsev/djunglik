@@ -24,7 +24,7 @@
 $djun_block_slug = 'front-page-first-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative pt-[140px] pb-[207px] z-10';
+$djun_classes = 'relative pt-[140px] xl:pb-[207px] pb-[127px] z-10 px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -41,7 +41,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			</div>
 		<?php endif; ?>
 		<div class="max-w-[568px] relative z-20">
-			<h1 class="mb-6 font-bold text-heading-1-pc font-unbounded">
+			<h1 class="mb-6 font-bold xl:text-heading-1-pc text-heading-2-pc font-unbounded">
 				<?php the_field( 'zagolovok' ); ?>
 			</h1>
 			<p class="mb-8 font-extrabold">

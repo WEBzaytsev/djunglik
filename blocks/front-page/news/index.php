@@ -24,7 +24,7 @@
 $djun_block_slug = 'news';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-10 mt-[195px] pb-[280px]';
+$djun_classes = 'relative z-10 mt-[195px] pb-[280px] px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -34,7 +34,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 
 	<div class="max-w-[1241px] mx-auto">
 		<div class="flex w-full items-center justify-between mb-15.5">
-			<h2 class="font-bold text-heading-1-pc font-unbounded">
+			<h2 class="font-bold xl:text-heading-1-pc text-heading-2-pc font-unbounded">
 				<?php the_field( 'zagolovok' ); ?>
 			</h2>
 			<?php $djun_knopka = get_field( 'knopka' ); ?>
@@ -63,15 +63,17 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						$djun_post_id = get_sub_field( 'post' );
 						$djun_post = get_post( $djun_post_id );
 						$djun_post_date = get_the_date( 'j F', $djun_post_id );
-						$djun_thumbnail = get_the_post_thumbnail( $djun_post_id, [ 392, 293 ] );
+						$djun_thumbnail = get_the_post_thumbnail_url( $djun_post_id );
 						?>
 						<?php if ( $djun_post_id ) : ?>
 							<div class="bg-white rounded-25 overflow-hidden h-auto mr-8 max-w-[392px]">
 								<div class="relative">
-                                    <?php echo $djun_thumbnail; // phpcs:ignore ?>
+									<img src="<?php echo esc_url( $djun_thumbnail ); ?>"
+										 class="w-full h-[293px] object-center object-cover"
+										 alt="img">
 									<span class="bg-green-800 text-white py-4 pl-8 pr-12 font-unbounded font-bold rounded-tr-[70px] absolute top-auto bottom-0 left-0 block w-fit"><?php echo esc_html( $djun_post_date ); ?></span>
 								</div>
-								<div class="p-8">
+								<div class="xl:p-8 p-6">
 									<a href="<?php echo esc_attr( get_permalink( $djun_post_id ) ); ?>"
 									   class="mb-6 text-heading-4-pc font-bold block">
 										<?php echo esc_html( get_the_title( $djun_post_id ) ); ?>

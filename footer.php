@@ -27,7 +27,7 @@
 		<?php get_template_part( '/vector-images/footer-leaves', 'right' ); ?>
 	</div>
 
-	<div class="relative z-30 text-white bg-green-800 pt-10">
+	<div class="relative z-30 text-white bg-green-800 pt-10 px-5">
 		<div class="max-w-huge mx-auto">
 			<div class="grid grid-cols-3 gap-x-3">
 				<div class="">

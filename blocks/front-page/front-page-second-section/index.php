@@ -24,7 +24,7 @@
 $djun_block_slug = 'front-page-second-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-20 pt-11 pb-7.5 bg-white';
+$djun_classes = 'relative z-20 pt-11 pb-7.5 bg-white px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 <?php if ( ! $djun_is_admin ) : ?>
@@ -39,14 +39,14 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 		<path d="M1606.46 -653.643C1850.77 -559.713 1919.75 -429.824 1885.97 -302.334C1850.21 -167.399 1739.88 -27.0262 1420.86 46.8128C1091.3 123.091 665.693 116.902 301.318 64.4406C-49.7798 13.8902 -321.043 -89.8921 -427.708 -219.341C-530.311 -343.86 -432.998 -474.533 -231.966 -582.754C-32.3161 -690.231 266.528 -772.815 626.189 -786.683C991.934 -800.786 1356.42 -749.777 1606.46 -653.643Z" fill="white"/>
 	</svg>
 
-	<div class="absolute z-30 top-auto left-auto -right-[90px] -bottom-[80px]">
+	<div class="absolute top-auto left-auto -right-[90px] -bottom-[80px] z-10">
 		<?php get_template_part( '/vector-images/front-page-second-section', 'leave' ); ?>
 	</div>
 <?php endif; ?>
 
 
 	<div class="max-w-huge mx-auto relative z-20">
-		<div class="flex gap-x-[160px]">
+		<div class="flex xl:gap-x-[160px] gap-x-20">
 			<?php $djun_kartinka = get_field( 'kartinka' ); ?>
 			<?php if ( $djun_kartinka ) : ?>
 				<div class="relative">
@@ -68,7 +68,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 				</div>
 			<?php endif; ?>
 			<div class="pt-12 max-w-md">
-				<h2 class="text-heading-2-pc font-bold mb-8 font-unbounded">
+				<h2 class="xl:text-heading-2-pc text-heading-3-pc font-bold mb-8 font-unbounded">
 					<?php the_field( 'zagolovok' ); ?>
 				</h2>
 				<p class="text-pure-text-pc mb-16">

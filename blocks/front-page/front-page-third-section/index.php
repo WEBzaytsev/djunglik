@@ -24,12 +24,12 @@
 $djun_block_slug = 'front-page-third-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-10 mt-[247px] pb-[255px]';
+$djun_classes = 'relative z-10 xl:mt-[247px] mt-[150px] pb-[255px] px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
 	<div class="max-w-[1060px] mx-auto relative z-10">
-		<h2 class="text-heading-1-pc text-center mb-11.5 font-bold font-unbounded">
+		<h2 class="xl:text-heading-1-pc text-heading-2-pc text-center mb-11.5 font-bold font-unbounded">
 			<?php the_field( 'zagolovok' ); ?>
 		</h2>
 
@@ -77,7 +77,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 							</div>
 						<?php endif; ?>
 						<div class="relative z-30 max-w-[400px]">
-							<p class="mb-6 font-bold text-heading-2-pc font-unbounded">
+							<p class="mb-6 font-bold xl:text-heading-2-pc text-heading-3-pc font-unbounded">
 								<?php echo esc_html( $djun_item_title ); ?>
 							</p>
 							<p class="text-pure-text-pc">
