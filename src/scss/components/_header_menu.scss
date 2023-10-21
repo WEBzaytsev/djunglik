@@ -1,0 +1,17 @@
+.main-navigation {
+
+  #primary-menu {
+    display: flex;
+    column-gap: 32px;
+    align-items: center;
+
+    li {
+      font-size: 14px;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
