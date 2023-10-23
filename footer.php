@@ -12,7 +12,7 @@
 ?>
 
 <div class="relative">
-	<footer class="bg-green-800 relative pb-[85px] z-50">
+	<footer class="bg-green-800 relative md:pb-[85px] pb-[116px] z-50">
 
 		<svg class="absolute left-0 w-full top-auto bottom-full z-20"
 			 viewBox="0 0 1440 71" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,20 +20,20 @@
 				  fill="#046E52"/>
 		</svg>
 
-		<div class="absolute z-10 -left-[134px] -top-[195px]">
+		<div class="absolute z-10 -left-[134px] -top-[195px] md:block hidden">
 			<?php get_template_part( '/vector-images/footer-leaves', 'left' ); ?>
 		</div>
 
-		<div class="absolute z-10 left-auto -right-[55px] -top-[196px]">
+		<div class="absolute z-10 left-auto -right-[55px] -top-[196px] md:block hidden">
 			<?php get_template_part( '/vector-images/footer-leaves', 'right' ); ?>
 		</div>
 
-		<div class="relative z-30 text-white bg-green-800 pt-10 px-5">
+		<div class="relative z-30 text-white bg-green-800 md:pt-10 pt-16.5 px-5">
 			<div class="max-w-huge mx-auto">
-				<div class="grid grid-cols-3 gap-x-3">
-					<div class="">
+				<div class="grid md:grid-cols-3 gap-x-3">
+					<div class="md:mb-0 mb-12">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-						   class="block mb-7.5"
+						   class="block md:mb-7.5 mb-6"
 						   rel="home">
 							<img src="<?php echo esc_url( get_field( 'logotip_dlya_futera', 'option' )['url'] ); ?>"
 								 alt="img">
@@ -42,7 +42,7 @@
 							<?php the_field( 'adres', 'option' ); ?>
 						</p>
 					</div>
-					<nav class="footer-navigation">
+					<nav class="footer-navigation md:mb-0 mb-16">
 						<?php
 						wp_nav_menu(
 							[
@@ -53,7 +53,7 @@
 						?>
 					</nav>
 					<div class="">
-						<div class="mx-auto max-w-[220px] w-full grid gap-4">
+						<div class="md:mx-auto md:max-w-[220px] w-full grid gap-4">
 							<a href="tel:<?php echo esc_attr( get_field( 'telefon', 'option' ) ); ?>"
 							   class="block font-unbounded hover:underline text-heading-4-pc font-bold">
 								<?php echo esc_html( get_field( 'telefon', 'option' ) ); ?>
@@ -94,12 +94,12 @@
 					</div>
 				</div>
 
-				<div class="grid grid-cols-3 gap-x-3 mt-10.5">
+				<div class="grid md:grid-cols-3 gap-x-3 gap-y-2 md:mt-10.5 mt-15">
 					<p class="text-xs">
 						<?php echo esc_html( '&copy;&nbsp;' . gmdate( 'Y' ) . '&nbsp;' . get_field( 'copyright_text', 'option' ) ); ?>
 					</p>
 					<a href="#" class="text-xs hover:underline">Политикой информационной безопасности</a>
-					<div class="mx-auto max-w-[220px] w-full">
+					<div class="md:mx-auto md:max-w-[220px] w-full">
 						<a href="#" class="text-xs hover:underline">Пользовательское соглашение</a>
 					</div>
 				</div>

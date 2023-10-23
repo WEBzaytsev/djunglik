@@ -24,7 +24,7 @@
 $djun_block_slug = 'news';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-10 mt-[195px] pb-[280px] px-5';
+$djun_classes = 'relative z-10 md:mt-[195px] mt-25 pb-[280px] px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -33,14 +33,14 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 <?php endif; ?>
 
 	<div class="max-w-[1241px] mx-auto">
-		<div class="flex w-full items-center justify-between mb-15.5">
-			<h2 class="font-bold xl:text-heading-1-pc text-heading-2-pc font-unbounded">
+		<div class="flex w-full items-center justify-between md:mb-15.5 mb-8">
+			<h2 class="font-bold xl:text-heading-1-pc md:text-heading-2-pc text-heading-1-mob font-unbounded">
 				<?php the_field( 'zagolovok' ); ?>
 			</h2>
 			<?php $djun_knopka = get_field( 'knopka' ); ?>
 			<?php if ( $djun_knopka ) : ?>
 				<a href="<?php echo esc_url( $djun_knopka['url'] ); ?>"
-				   class="border-2 border-grey rounded-60 px-16 pt-4 pb-5 font-extrabold text-pure-text-pc flex items-center justify-center gap-6 w-fit"
+				   class="border-2 border-grey rounded-60 px-16 pt-4 pb-5 font-extrabold text-pure-text-pc items-center justify-center gap-6 w-fit md:flex hidden"
 				   target="<?php echo esc_attr( $djun_knopka['target'] ); ?>">
 					<span><?php echo esc_html( $djun_knopka['title'] ); ?></span>
 					<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,19 +66,19 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						$djun_thumbnail = get_the_post_thumbnail_url( $djun_post_id );
 						?>
 						<?php if ( $djun_post_id ) : ?>
-							<div class="bg-white rounded-25 overflow-hidden h-auto mr-8 max-w-[392px]">
+							<div class="bg-white rounded-25 overflow-hidden h-auto md:mr-8 mr-4 md:max-w-[392px] max-w-[300px]">
 								<div class="relative">
 									<img src="<?php echo esc_url( $djun_thumbnail ); ?>"
 										 class="w-full h-[293px] object-center object-cover"
 										 alt="img">
-									<span class="bg-green-800 text-white py-4 pl-8 pr-12 font-unbounded font-bold rounded-tr-[70px] absolute top-auto bottom-0 left-0 block w-fit"><?php echo esc_html( $djun_post_date ); ?></span>
+									<span class="bg-green-800 text-white py-4 md:pl-8 pl-6 pr-12 font-unbounded font-bold rounded-tr-[70px] absolute top-auto bottom-0 left-0 block w-fit"><?php echo esc_html( $djun_post_date ); ?></span>
 								</div>
 								<div class="xl:p-8 p-6">
 									<a href="<?php echo esc_attr( get_permalink( $djun_post_id ) ); ?>"
-									   class="mb-6 text-heading-4-pc font-bold block">
+									   class="md:mb-6 mb-4 md:text-heading-4-pc text-pure-text-base font-bold block font-unbounded">
 										<?php echo esc_html( get_the_title( $djun_post_id ) ); ?>
 									</a>
-									<p class="text-pure-text-pc">
+									<p class="md:text-pure-text-pc text-sm">
 										<?php echo esc_html( $djun_post->post_excerpt ); ?>
 									</p>
 								</div>
@@ -88,10 +88,10 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 				<?php endif; ?>
 			</div>
 
-			<div class="relative mt-16 w-full flex items-end justify-between">
+			<div class="relative md:mt-16 mt-12 w-full flex items-end justify-between">
 				<div class="news-slider-pagination flex gap-x-5.5"></div>
 
-				<div class="flex items-center gap-x-12">
+				<div class="items-center gap-x-12 md:flex hidden">
 					<svg width="22" height="39" class="news-slider-button-prev cursor-pointer" viewBox="0 0 22 39" fill="none"
 						 xmlns="http://www.w3.org/2000/svg">
 						<path d="M19 3L3 19.5L19 36" stroke="#666666" stroke-width="5" stroke-linecap="round"
@@ -105,6 +105,19 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 					</svg>
 				</div>
 			</div>
+
+			<?php if ( $djun_knopka ) : ?>
+				<a href="<?php echo esc_url( $djun_knopka['url'] ); ?>"
+				   class="border-2 border-grey rounded-60 px-16 pt-4 pb-5 font-extrabold text-pure-text-pc items-center justify-center gap-6 md:hidden flex w-full max-w-[400px] mx-auto mt-12"
+				   target="<?php echo esc_attr( $djun_knopka['target'] ); ?>">
+					<span><?php echo esc_html( $djun_knopka['title'] ); ?></span>
+					<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path id="Line 1"
+							  d="M26.7071 8.20711C27.0976 7.81658 27.0976 7.18342 26.7071 6.79289L20.3431 0.428932C19.9526 0.0384078 19.3195 0.0384078 18.9289 0.428932C18.5384 0.819457 18.5384 1.45262 18.9289 1.84315L24.5858 7.5L18.9289 13.1569C18.5384 13.5474 18.5384 14.1805 18.9289 14.5711C19.3195 14.9616 19.9526 14.9616 20.3431 14.5711L26.7071 8.20711ZM0 8.5H26V6.5H0V8.5Z"
+							  fill="#333333"/>
+					</svg>
+				</a>
+			<?php endif; ?>
 		</div>
 	</div>
 

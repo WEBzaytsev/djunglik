@@ -24,7 +24,7 @@
 $djun_block_slug = 'front-page-fourth-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-20 xl:mt-5 xl:pt-4.5 pb-[263px] bg-white px-5';
+$djun_classes = 'relative z-20 xl:mt-5 xl:pt-4.5 md:pb-[263px] pb-[238px] bg-white px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 <?php if ( ! $djun_is_admin ) : ?>
@@ -42,16 +42,16 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 <?php endif; ?>
 
 	<div class="relative z-30 max-w-huge mx-auto">
-		<div class="flex items-center lg:gap-x-[62px] gap-x-5">
-			<div class="lg:max-w-[386px] max-w-[50%] shrink-0 grow-0">
-				<h3 class="font-unbounded xl:text-heading-2-pc text-heading-3-pc mb-8 font-bold">
+		<div class="md:flex items-center lg:gap-x-[62px] gap-x-5">
+			<div class="lg:max-w-[386px] md:max-w-[50%] shrink-0 grow-0 md:mb-0 mb-13.5">
+				<h3 class="font-unbounded xl:text-heading-2-pc md:text-heading-3-pc text-heading-1-mob mb-8 font-bold">
 					<?php the_field( 'zagolovok' ); ?>
 				</h3>
-				<p class="text-pure-text-pc">
+				<p class="md:text-pure-text-pc text-pure-text-base">
 					<?php the_field( 'tekst' ); ?>
 				</p>
 			</div>
-			<div class="relative">
+			<div class="relative md:ml-0 -ml-6">
 				<?php $djun_video_url = get_field( 'ssylka_na_video' ); ?>
 
 				<a href="<?php echo esc_url( $djun_video_url ); ?>"
@@ -67,10 +67,12 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 				</a>
 
 				<?php if ( ! $djun_is_admin ) : ?>
-					<span class="absolute font-badscript text-[24px] leading-[175%] -left-[240px] top-auto bottom-4">Нажмите кнопочку Play</span>
+					<span class="absolute font-badscript text-[24px] leading-[175%] -left-[240px] top-auto bottom-4 md:block hidden">
+						Нажмите кнопочку Play
+					</span>
 
 					<svg width="164" height="66" viewBox="0 0 164 66" fill="none" xmlns="http://www.w3.org/2000/svg"
-						 class="absolute block -left-[96px] top-auto -bottom-[70px]">
+						 class="absolute -left-[96px] top-auto -bottom-[70px] md:block hidden">
 						<path d="M160.364 11.5227C160.147 11.0149 159.559 10.7795 159.052 10.9968L150.777 14.5377C150.27 14.755 150.034 15.3428 150.251 15.8505C150.469 16.3583 151.057 16.5937 151.564 16.3764L158.919 13.2289L162.067 20.5837C162.284 21.0915 162.872 21.3269 163.379 21.1096C163.887 20.8923 164.123 20.3046 163.905 19.7968L160.364 11.5227ZM158.517 11.5443C141.676 53.5837 93.9433 74.011 51.9038 57.1698L51.1601 59.0263C94.2249 76.2783 143.121 55.3528 160.373 12.288L158.517 11.5443ZM51.9038 57.1698C26.4698 46.9808 8.94589 25.4856 2.80009 0.780324L0.859244 1.26314C7.15351 26.5653 25.1042 48.5883 51.1601 59.0263L51.9038 57.1698Z"
 							  fill="#666666"/>
 					</svg>
@@ -84,10 +86,10 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	</div>
 
 <?php if ( ! $djun_is_admin ) : ?>
-	<div class="absolute z-30 lg:-left-[104px] -left-18 -bottom-[121px] top-auto">
+	<div class="absolute z-30 lg:-left-[104px] -left-18 -bottom-[121px] top-auto md:block hidden">
 		<?php get_template_part( '/vector-images/front-page-fourth-section-leaves-left' ); ?>
 	</div>
-	<div class="absolute z-30 left-auto right-0 top-auto xl:bottom-0 -bottom-25">
+	<div class="absolute z-30 left-auto md:right-0 -right-[70px] top-auto xl:bottom-0 md:-bottom-25 -bottom-20">
 		<?php get_template_part( '/vector-images/front-page-fourth-section-lion' ); ?>
 	</div>
 <?php endif; ?>

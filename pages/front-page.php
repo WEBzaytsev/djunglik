@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<main class="relative">
+	<main class="relative overflow-hidden">
 		<?php the_content(); ?>
 	</main>
 

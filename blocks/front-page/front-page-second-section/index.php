@@ -24,7 +24,7 @@
 $djun_block_slug = 'front-page-second-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-20 pt-11 pb-7.5 bg-white px-5';
+$djun_classes = 'relative z-20 md:pt-11 pt-[75px] md:pb-7.5 pb-25 bg-white px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 <?php if ( ! $djun_is_admin ) : ?>
@@ -39,17 +39,35 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 		<path d="M1606.46 -653.643C1850.77 -559.713 1919.75 -429.824 1885.97 -302.334C1850.21 -167.399 1739.88 -27.0262 1420.86 46.8128C1091.3 123.091 665.693 116.902 301.318 64.4406C-49.7798 13.8902 -321.043 -89.8921 -427.708 -219.341C-530.311 -343.86 -432.998 -474.533 -231.966 -582.754C-32.3161 -690.231 266.528 -772.815 626.189 -786.683C991.934 -800.786 1356.42 -749.777 1606.46 -653.643Z" fill="white"/>
 	</svg>
 
-	<div class="absolute top-auto left-auto -right-[90px] -bottom-[80px] z-10">
+	<div class="absolute top-auto left-auto -right-[90px] -bottom-[80px] z-10 md:block hidden">
 		<?php get_template_part( '/vector-images/front-page-second-section', 'leave' ); ?>
 	</div>
 <?php endif; ?>
 
 
 	<div class="max-w-huge mx-auto relative z-20">
-		<div class="flex xl:gap-x-[160px] lg:gap-x-20 gap-x-6 items-start">
+		<div class="md:flex xl:gap-x-[160px] lg:gap-x-20 gap-x-6 items-start">
+			<div class="md:pt-12 lg:max-w-md md:max-w-[50%] relative z-20 order-2 md:mb-0 mb-14.5">
+				<h2 class="xl:text-heading-2-pc md:text-heading-3-pc text-heading-4-pc font-bold mb-8 font-unbounded">
+					<?php the_field( 'zagolovok' ); ?>
+				</h2>
+				<p class="md:text-pure-text-pc text-pure-text-base md:mb-16 mb-12">
+					<?php the_field( 'tekst' ); ?>
+				</p>
+				<a href="#"
+				   class="bg-ochre rounded-60 px-16 pt-4 pb-5 font-extrabold text-pure-text-pc flex items-center justify-center gap-6 w-fit">
+					<span><?php the_field( 'tekst_knopki' ); ?></span>
+					<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path id="Line 1"
+							  d="M26.7071 8.20711C27.0976 7.81658 27.0976 7.18342 26.7071 6.79289L20.3431 0.428932C19.9526 0.0384078 19.3195 0.0384078 18.9289 0.428932C18.5384 0.819457 18.5384 1.45262 18.9289 1.84315L24.5858 7.5L18.9289 13.1569C18.5384 13.5474 18.5384 14.1805 18.9289 14.5711C19.3195 14.9616 19.9526 14.9616 20.3431 14.5711L26.7071 8.20711ZM0 8.5H26V6.5H0V8.5Z"
+							  fill="#333333"/>
+					</svg>
+				</a>
+			</div>
+
 			<?php $djun_kartinka = get_field( 'kartinka' ); ?>
 			<?php if ( $djun_kartinka ) : ?>
-				<div class="relative z-10">
+				<div class="relative z-10 order-1">
 					<?php if ( ! $djun_is_admin ) : ?>
 						<div class="absolute z-10 lg:top-auto -top-11.5 left-auto lg:-bottom-5 lg:-right-[94px] -right-[54px]">
 							<?php get_template_part( '/vector-images/front-page-second-section', 'img-bg' ); ?>
@@ -67,23 +85,6 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 
 				</div>
 			<?php endif; ?>
-			<div class="pt-12 lg:max-w-md max-w-[50%] relative z-20">
-				<h2 class="xl:text-heading-2-pc text-heading-3-pc font-bold mb-8 font-unbounded">
-					<?php the_field( 'zagolovok' ); ?>
-				</h2>
-				<p class="text-pure-text-pc mb-16">
-					<?php the_field( 'tekst' ); ?>
-				</p>
-				<a href="#"
-				   class="bg-ochre rounded-60 px-16 pt-4 pb-5 font-extrabold text-pure-text-pc flex items-center justify-center gap-6 w-fit">
-					<span><?php the_field( 'tekst_knopki' ); ?></span>
-					<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path id="Line 1"
-							  d="M26.7071 8.20711C27.0976 7.81658 27.0976 7.18342 26.7071 6.79289L20.3431 0.428932C19.9526 0.0384078 19.3195 0.0384078 18.9289 0.428932C18.5384 0.819457 18.5384 1.45262 18.9289 1.84315L24.5858 7.5L18.9289 13.1569C18.5384 13.5474 18.5384 14.1805 18.9289 14.5711C19.3195 14.9616 19.9526 14.9616 20.3431 14.5711L26.7071 8.20711ZM0 8.5H26V6.5H0V8.5Z"
-							  fill="#333333"/>
-					</svg>
-				</a>
-			</div>
 		</div>
 	</div>
 

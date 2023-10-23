@@ -24,7 +24,7 @@
 $djun_block_slug = 'reviews';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-30 mt-10 pt-[78px] pb-25 bg-ochre px-5';
+$djun_classes = 'relative z-30 md:mt-10 md:pt-[78px] pt-10 md:pb-25 pb-[220px] bg-ochre px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -36,19 +36,19 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			  fill="#FD9B28"/>
 	</svg>
 
-	<div class="absolute top-auto lg:-bottom-[93px] -bottom-[8%] left-0 h-auto w-full z-20">
+	<div class="absolute top-auto lg:-bottom-[93px] md:-bottom-[8%] -bottom-7.5 md:left-0 -left-[340px] h-auto w-full z-20">
 		<?php get_template_part( '/vector-images/front-page-reviews', 'tiger' ); ?>
 	</div>
 <?php endif; ?>
 
-	<div class="flex max-w-[1241px] mx-auto w-full items-center justify-between mb-15.5">
-		<h2 class="text-white font-bold xl:text-heading-1-pc text-heading-2-pc font-unbounded">
+	<div class="flex max-w-[1241px] mx-auto w-full items-center justify-between md:mb-15.5 mb-8">
+		<h2 class="text-white font-bold xl:text-heading-1-pc md:text-heading-2-pc text-heading-1-mob font-unbounded">
 			<?php the_field( 'zagolovok' ); ?>
 		</h2>
 		<?php $djun_knopka = get_field( 'knopka' ); ?>
 		<?php if ( $djun_knopka ) : ?>
 			<a href="<?php echo esc_url( $djun_knopka['url'] ); ?>"
-			   class="bg-ochre border-2 border-white rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc flex items-center justify-center gap-6 w-fit whitespace-nowrap"
+			   class="bg-ochre border-2 border-white rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc items-center justify-center gap-6 w-fit whitespace-nowrap md:flex hidden"
 			   target="<?php echo esc_attr( $djun_knopka['target'] ); ?>">
 				<span><?php echo esc_html( $djun_knopka['title'] ); ?></span>
 				<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,18 +60,18 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 		<?php endif; ?>
 	</div>
 
-	<div class="max-w-huge mx-auto relative z-10 pb-15">
+	<div class="max-w-huge mx-auto relative z-10 md:pb-15 pb-12">
 		<?php if ( have_rows( 'spisok_otzyvov' ) ) : ?>
 			<div class="reviews-slider">
-				<div class="xl:max-w-[710px] max-w-[500px]">
+				<div class="xl:max-w-[710px] md:max-w-[500px] max-w-[300px]">
 					<?php
 					while ( have_rows( 'spisok_otzyvov' ) ) :
 						the_row();
 						?>
 						<?php $djun_otzyv_id = get_sub_field( 'otzyv' ); ?>
 						<?php if ( $djun_otzyv_id ) : ?>
-							<div class="bg-white xl:p-12.5 p-8 rounded-[25px] mr-8 h-auto">
-								<div class="flex items-center gap-x-8">
+							<div class="bg-white xl:p-12.5 md:p-8 p-6 rounded-25 md:mr-8 mr-4 h-auto">
+								<div class="flex md:items-center items-start md:gap-x-8 gap-x-4">
 									<?php $djun_avatarka = get_field( 'avatarka', $djun_otzyv_id ); ?>
 									<?php if ( $djun_avatarka ) : ?>
 										<img src="<?php echo esc_url( $djun_avatarka['url'] ); ?>"
@@ -81,11 +81,11 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 									<?php endif; ?>
 
 									<div class="">
-										<p class="font-unbounded xl:text-heading-3-pc text-heading-4-pc mb-2.5 font-bold">
+										<p class="font-unbounded xl:text-heading-3-pc md:text-heading-4-pc text-pure-text-base md:mb-2.5 mb-3 font-bold">
 											<?php echo get_the_title( $djun_otzyv_id ); // phpcs:ignore ?>
 										</p>
-										<div class="flex items-center gap-x-4">
-											<div class="flex gap-x-2 items-center">
+										<div class="md:flex items-center gap-x-4">
+											<div class="flex gap-x-2 items-center md:mb-0 mb-1">
 												<?php $djun_otzyv_rating = (int) get_field( 'rejting', $djun_otzyv_id ); ?>
 												<?php for ( $djun_k = 1; $djun_k < 6; $djun_k++ ) : ?>
 													<svg width="22" height="20" viewBox="0 0 22 20" fill="none"
@@ -126,7 +126,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	<div class="relative z-30 max-w-huge mx-auto w-full flex items-end justify-between">
 		<div class="reviews-slider-pagination flex gap-x-5.5"></div>
 
-		<div class="flex items-center gap-x-12">
+		<div class="md:flex hidden items-center gap-x-12">
 			<svg width="22" height="39" class="reviews-slider-button-prev cursor-pointer" viewBox="0 0 22 39" fill="none"
 				 xmlns="http://www.w3.org/2000/svg">
 				<path d="M19 3L3 19.5L19 36" stroke="white" stroke-width="5" stroke-linecap="round"
@@ -140,6 +140,19 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			</svg>
 		</div>
 	</div>
+
+<?php if ( $djun_knopka ) : ?>
+	<a href="<?php echo esc_url( $djun_knopka['url'] ); ?>"
+	   class="bg-ochre border-2 border-white rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc items-center justify-center gap-6 w-full max-w-[400px] whitespace-nowrap md:hidden flex mt-12"
+	   target="<?php echo esc_attr( $djun_knopka['target'] ); ?>">
+		<span><?php echo esc_html( $djun_knopka['title'] ); ?></span>
+		<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path id="Line 1"
+				  d="M26.7071 8.20711C27.0976 7.81658 27.0976 7.18342 26.7071 6.79289L20.3431 0.428932C19.9526 0.0384078 19.3195 0.0384078 18.9289 0.428932C18.5384 0.819457 18.5384 1.45262 18.9289 1.84315L24.5858 7.5L18.9289 13.1569C18.5384 13.5474 18.5384 14.1805 18.9289 14.5711C19.3195 14.9616 19.9526 14.9616 20.3431 14.5711L26.7071 8.20711ZM0 8.5H26V6.5H0V8.5Z"
+				  fill="white"/>
+		</svg>
+	</a>
+<?php endif; ?>
 
 <?php
 

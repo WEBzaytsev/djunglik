@@ -24,7 +24,7 @@
 $djun_block_slug = 'feedback-form';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative bg-white pt-14 xl:pb-[200px] pb-[360px] px-5';
+$djun_classes = 'relative bg-white md:pt-14 pt-20 xl:pb-[200px] pb-[360px] px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -35,39 +35,39 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			  fill="white"/>
 	</svg>
 
-	<div class="absolute z-10 top-auto -bottom-[94px] left-[12.22%]">
+	<div class="absolute z-10 top-auto -bottom-[94px] md:left-[12.22%] left-1/2 md:translate-x-0 -translate-x-[67%]">
 		<?php get_template_part( '/vector-images/feedback-form', 'image' ); ?>
 	</div>
 <?php endif; ?>
 
 	<div class="max-w-huge mx-auto relative z-20">
-		<div class="flex w-full justify-between gap-x-10">
-			<div class="max-w-[568px]">
-				<h2 class="xl:text-heading-1-pc text-heading-2-pc font-bold font-unbounded mb-7.5">
+		<div class="md:flex w-full justify-between gap-x-10">
+			<div class="md:max-w-[568px] md:mb-0 mb-8">
+				<h2 class="xl:text-heading-1-pc md:text-heading-2-pc text-heading-1-mob font-bold font-unbounded mb-7.5">
 					<?php the_field( 'zagolovok_bloka' ); ?>
 				</h2>
-				<p class="text-pure-text-pc">
+				<p class="md:text-pure-text-pc text-pure-text-base">
 					<?php the_field( 'tekst' ); ?>
 				</p>
 			</div>
 			<form class="xl:max-w-[604px] lg:max-w-[550px] max-w-[420px] shrink-0 grow-0 w-full">
-				<p class="text-center font-bold font-unbounded xl:text-heading-2-pc text-heading-3-pc mb-10.5">
+				<p class="text-center font-bold font-unbounded xl:text-heading-2-pc md:text-heading-3-pc text-pure-text-pc md:mb-10.5 mb-12">
 					<?php the_field( 'zagolovok_formy' ); ?>
 				</p>
-				<div class="mb-6">
+				<div class="md:mb-6 mb-4">
 					<label for="feedback-name"
-						   class="mb-0.5 block text-pure-text-pc font-extrabold">
+						   class="md:mb-0.5 mb-1 block text-pure-text-pc font-extrabold">
 						Имя
 					</label>
 					<input type="text"
 						   name="feedback-name"
 						   id="feedback-name"
 						   placeholder="Введите имя"
-						   class="rounded-25 block bg-white border border-grey-600 py-6 px-7 w-full">
+						   class="rounded-25 block bg-white border border-grey-600 md:py-6 py-4.5 px-7 w-full">
 				</div>
-				<div class="lg:mb-12 mb-4">
+				<div class="mb-12">
 					<label for="feedback-phone"
-						   class="mb-0.5 block text-pure-text-pc font-extrabold">
+						   class="md:mb-0.5 mb-1 block text-pure-text-pc font-extrabold">
 						Телефон
 					</label>
 					<input type="text"
@@ -77,14 +77,14 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						   class="rounded-25 block bg-white border border-grey-600 py-6 px-7 w-full">
 				</div>
 				<div class="lg:flex items-center justify-between gap-x-8">
-					<p class="text-xs order-2 lg:mb-0 mb-4">
+					<button class="bg-red rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc md:w-fit w-full lg:mb-0 mb-6">
+						Заказать
+					</button>
+					<p class="text-xs">
 						Нажимая на кнопку «Заказать», я даю согласие на обработку моих персональных данных в
 						соответствии с
 						<a href="#" class="text-[#6496F8] hover:underline">политикой информационной безопасности</a>
 					</p>
-					<button class="bg-red rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc w-fit order-1">
-						Заказать
-					</button>
 				</div>
 			</form>
 		</div>

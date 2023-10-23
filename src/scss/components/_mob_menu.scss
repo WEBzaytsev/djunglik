@@ -1,0 +1,15 @@
+body.mob-menu-open {
+
+  .mob-menu,
+  .mob-menu-header-bg {
+    transform: translateX(0);
+  }
+
+  .mob-menu-button-show {
+    display: none;
+  }
+
+  .mob-menu-button-hide {
+    display: block;
+  }
+}

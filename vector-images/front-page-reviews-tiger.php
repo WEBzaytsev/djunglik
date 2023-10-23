@@ -1,5 +1,5 @@
 <svg width="1440" height="327"
-     class="lg:w-auto w-full h-auto"
+     class="lg:w-auto md:w-full w-[1000px] h-auto"
      viewBox="0 0 1440 327" fill="none" xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
     <path d="M0 234H1440V275C1049 349 406 350 0 234Z" fill="#FD9B28"/>

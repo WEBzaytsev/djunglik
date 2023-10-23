@@ -24,7 +24,7 @@
 $djun_block_slug = 'front-page-first-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative lg:pt-[140px] pt-9.5 xl:pb-[207px] lg:pb-[127px] pb-22 z-10 px-5';
+$djun_classes = 'relative lg:pt-[140px] pt-9.5 xl:pb-[207px] lg:pb-[127px] md:pb-22 z-10 px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -36,19 +36,19 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 
 	<div class="max-w-huge mx-auto relative z-30">
 
-		<div class="max-w-[568px] relative z-20 lg:mb-0 mb-5">
-			<h1 class="mb-6 font-bold xl:text-heading-1-pc text-heading-2-pc font-unbounded">
+		<div class="max-w-[568px] relative z-20 md:pb-0 pb-[390px]">
+			<h1 class="md:mb-6 mb-4 font-bold xl:text-heading-1-pc md:text-heading-2-pc text-heading-1-mob font-unbounded">
 				<?php the_field( 'zagolovok' ); ?>
 			</h1>
-			<p class="mb-8 font-extrabold">
+			<p class="md:mb-8 mb-6 font-extrabold md:text-heading-3-pc text-pure-text-pc">
 				<?php the_field( 'podzagolovok' ); ?>
 			</p>
-			<p class="text-pure-text-pc mb-16">
+			<p class="md:text-pure-text-pc text-pure-text-base md:mb-16 mb-8">
 				<?php the_field( 'tekst' ); ?>
 			</p>
 
 			<a href="#"
-			   class="bg-red rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc flex items-center justify-center gap-6 w-fit">
+			   class="bg-red rounded-60 md:px-16 px-5 pt-4 pb-5 text-white font-extrabold text-pure-text-pc flex items-center justify-center gap-6 md:w-fit w-full md:max-w-none max-w-[320px] whitespace-nowrap">
 				<span><?php the_field( 'tekst_knopki' ); ?></span>
 				<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path id="Line 1"
@@ -59,7 +59,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 		</div>
 
 		<?php if ( ! $djun_is_admin ) : ?>
-			<div class="absolute z-10 -right-[152px] xl:-bottom-[311px] lg:-bottom-[230px] -bottom-[170px] top-auto">
+			<div class="absolute z-10 md:-right-[152px] md:left-auto left-1/2 md:translate-x-0 -translate-x-1/2 xl:-bottom-[311px] lg:-bottom-[230px] md:-bottom-[170px] -bottom-[110px] top-auto">
 				<?php get_template_part( '/vector-images/front-page-first-section', 'main-img' ); ?>
 			</div>
 		<?php endif; ?>
