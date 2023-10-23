@@ -122,7 +122,9 @@ module.exports = {
                 wide: '1300px',
             },
             screens: {},
-            gridTemplateColumns: {},
+            gridTemplateColumns: {
+                post: '3fr 1fr'
+            },
             gridTemplateRows: {},
             gridAutoRows: {},
             zIndex: {},

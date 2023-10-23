@@ -90,8 +90,11 @@ function djun_breadcrumbs(): void {
 	echo '<a class="hover:underline" href="' . esc_url( home_url() ) . '">Главная</a>' . wp_kses_post( $separator );
 
 	if ( is_category() || is_single() ) {
-		the_category( $separator );
-		if ( is_single() ) {
+		if ( is_singular( 'post' ) ) {
+			echo '<a class="hover:underline" href="' . esc_url( get_the_permalink( 155 ) ) . '">Новости</a>';
+			echo wp_kses_post( $separator );
+			echo '<span class="text-grey-200">' . esc_html( get_the_title() ) . '</span>';
+		} elseif ( is_single() ) {
 			echo wp_kses_post( $separator );
 			echo '<span class="text-grey-200">' . esc_html( get_the_title() ) . '</span>';
 		}
