@@ -76,3 +76,58 @@ function djun_custom_block_end(): void {
 }
 
 add_action( 'djun_custom_block_close', 'djun_custom_block_end', 10 );
+
+/**
+ * Display Breadcrumbs.
+ *
+ * @return void
+ */
+function djun_breadcrumbs(): void {
+	$separator = '<span class="text-grey-600">/</span>';
+
+	echo '<div class="mx-5 mt-12">';
+	echo '<div class="max-w-huge mx-auto flex gap-x-4 text-sm">';
+	echo '<a class="hover:underline" href="' . esc_url( home_url() ) . '">Главная</a>' . esc_html( $separator );
+
+	if ( is_category() || is_single() ) {
+		the_category( $separator );
+		if ( is_single() ) {
+			echo esc_html( $separator );
+			echo '<span class="text-grey-200">' . esc_html( get_the_title() ) . '</span>';
+		}
+	} elseif ( is_page() ) {
+		echo '<span class="text-grey-200">' . esc_html( get_the_title() ) . '</span>';
+	}
+	echo '</div>';
+	echo '</div>';
+}
+
+/**
+ * Customize Pagination.
+ *
+ * @param WP_Query|null $query WP_Query for pagination.
+ * @return void
+ */
+function djun_pagination( ?WP_Query $query ): void {
+	$djun_paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+	$djun_prev_link = '<svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.0001 1.5L2.36376 13.5L14.0001 25.5" class="' . ( $djun_paged > 1 ? 'stroke-grey' : 'stroke-grey-200' ) . '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>';
+	$djun_prev_link = $djun_paged > 1 ? '<a href="' . esc_url( get_previous_posts_page_link() ) . '">' . $djun_prev_link . '</a>' : $djun_prev_link;
+	$djun_next_link = '<svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 1.5L13.6364 13.5L2 25.5" class="' . ( $djun_paged < $query->max_num_pages ? 'stroke-grey' : 'stroke-grey-200' ) . '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>';
+	$djun_next_link = $djun_paged < $query->max_num_pages ? '<a href="' . esc_url( get_next_posts_page_link() ) . '">' . $djun_next_link . '</a>' : $djun_next_link;
+	$djun_page_links = paginate_links(
+		[
+			'total' => $query->max_num_pages,
+			'type' => 'array',
+			'prev_next' => false,
+		]
+	);
+
+	array_unshift( $djun_page_links, $djun_prev_link );
+	$djun_page_links[] = $djun_next_link;
+	echo implode( $djun_page_links ); // phpcs:ignore
+}

@@ -80,7 +80,9 @@ module.exports = {
             colors: {
                 grey: {
                     DEFAULT: '#333',
-                    600: '#666'
+                    200: '#B1AEA9',
+                    600: '#666',
+                    900: '#999'
                 },
                 red: '#E31C21',
                 beige: '#FCF5EB',
