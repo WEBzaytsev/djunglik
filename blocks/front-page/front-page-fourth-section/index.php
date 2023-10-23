@@ -42,8 +42,8 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 <?php endif; ?>
 
 	<div class="relative z-30 max-w-huge mx-auto">
-		<div class="flex items-center gap-x-[62px]">
-			<div class="max-w-[386px] shrink-0 grow-0">
+		<div class="flex items-center lg:gap-x-[62px] gap-x-5">
+			<div class="lg:max-w-[386px] max-w-[50%] shrink-0 grow-0">
 				<h3 class="font-unbounded xl:text-heading-2-pc text-heading-3-pc mb-8 font-bold">
 					<?php the_field( 'zagolovok' ); ?>
 				</h3>
@@ -61,7 +61,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						<img src="<?php echo esc_url( $djun_poster_k_video['url'] ); ?>"
 							 width="<?php echo esc_attr( $djun_poster_k_video['width'] / 2 ); ?>"
 							 height="<?php echo esc_attr( $djun_poster_k_video['height'] / 2 ); ?>"
-							 class="relative z-20"
+							 class="relative z-20 min-w-[397px]"
 							 alt="<?php echo esc_attr( $djun_poster_k_video['alt'] ); ?>"/>
 					<?php endif; ?>
 				</a>
@@ -75,7 +75,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 							  fill="#666666"/>
 					</svg>
 
-					<div class="absolute left-[228px] top-2 z-10">
+					<div class="absolute lg:left-[228px] left-[150px] top-2 z-10">
 						<?php get_template_part( '/vector-images/front-page-fourth-section-poster-bg' ); ?>
 					</div>
 				<?php endif; ?>
@@ -84,7 +84,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	</div>
 
 <?php if ( ! $djun_is_admin ) : ?>
-	<div class="absolute z-30 -left-[104px] -bottom-[121px] top-auto">
+	<div class="absolute z-30 lg:-left-[104px] -left-18 -bottom-[121px] top-auto">
 		<?php get_template_part( '/vector-images/front-page-fourth-section-leaves-left' ); ?>
 	</div>
 	<div class="absolute z-30 left-auto right-0 top-auto xl:bottom-0 -bottom-25">

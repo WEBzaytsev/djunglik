@@ -24,23 +24,19 @@
 $djun_block_slug = 'front-page-first-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative pt-[140px] xl:pb-[207px] pb-[127px] z-10 px-5';
+$djun_classes = 'relative lg:pt-[140px] pt-9.5 xl:pb-[207px] lg:pb-[127px] pb-22 z-10 px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
 <?php if ( ! $djun_is_admin ) : ?>
-	<div class="absolute z-10 -left-[100px] -bottom-[205px] top-auto">
+	<div class="absolute z-10 -left-[100px] -bottom-[205px] top-auto lg:block hidden">
 		<?php get_template_part( '/vector-images/front-page-first-section', 'leaves' ); ?>
 	</div>
 <?php endif; ?>
 
 	<div class="max-w-huge mx-auto relative z-30">
-		<?php if ( ! $djun_is_admin ) : ?>
-			<div class="absolute z-10 -right-[152px] -bottom-[311px] top-auto">
-				<?php get_template_part( '/vector-images/front-page-first-section', 'main-img' ); ?>
-			</div>
-		<?php endif; ?>
-		<div class="max-w-[568px] relative z-20">
+
+		<div class="max-w-[568px] relative z-20 lg:mb-0 mb-5">
 			<h1 class="mb-6 font-bold xl:text-heading-1-pc text-heading-2-pc font-unbounded">
 				<?php the_field( 'zagolovok' ); ?>
 			</h1>
@@ -61,6 +57,13 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 				</svg>
 			</a>
 		</div>
+
+		<?php if ( ! $djun_is_admin ) : ?>
+			<div class="absolute z-10 -right-[152px] xl:-bottom-[311px] lg:-bottom-[230px] -bottom-[170px] top-auto">
+				<?php get_template_part( '/vector-images/front-page-first-section', 'main-img' ); ?>
+			</div>
+		<?php endif; ?>
+
 	</div>
 
 <?php

@@ -46,15 +46,15 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 
 
 	<div class="max-w-huge mx-auto relative z-20">
-		<div class="flex xl:gap-x-[160px] gap-x-20">
+		<div class="flex xl:gap-x-[160px] lg:gap-x-20 gap-x-6 items-start">
 			<?php $djun_kartinka = get_field( 'kartinka' ); ?>
 			<?php if ( $djun_kartinka ) : ?>
-				<div class="relative">
+				<div class="relative z-10">
 					<?php if ( ! $djun_is_admin ) : ?>
-						<div class="absolute z-10 top-auto left-auto -bottom-5 -right-[94px]">
+						<div class="absolute z-10 lg:top-auto -top-11.5 left-auto lg:-bottom-5 lg:-right-[94px] -right-[54px]">
 							<?php get_template_part( '/vector-images/front-page-second-section', 'img-bg' ); ?>
 						</div>
-						<div class="absolute z-30 top-auto -left-7.5 -bottom-5">
+						<div class="absolute z-30 top-auto lg:-left-7.5 left-0 lg:-bottom-5 -bottom-8">
 							<?php get_template_part( '/vector-images/front-page-second-section', 'img-leaves' ); ?>
 						</div>
 					<?php endif; ?>
@@ -67,7 +67,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 
 				</div>
 			<?php endif; ?>
-			<div class="pt-12 max-w-md">
+			<div class="pt-12 lg:max-w-md max-w-[50%] relative z-20">
 				<h2 class="xl:text-heading-2-pc text-heading-3-pc font-bold mb-8 font-unbounded">
 					<?php the_field( 'zagolovok' ); ?>
 				</h2>

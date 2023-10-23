@@ -36,7 +36,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			  fill="#FD9B28"/>
 	</svg>
 
-	<div class="absolute top-auto -bottom-[93px] left-0 h-auto w-full z-20">
+	<div class="absolute top-auto lg:-bottom-[93px] -bottom-[8%] left-0 h-auto w-full z-20">
 		<?php get_template_part( '/vector-images/front-page-reviews', 'tiger' ); ?>
 	</div>
 <?php endif; ?>
@@ -48,7 +48,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 		<?php $djun_knopka = get_field( 'knopka' ); ?>
 		<?php if ( $djun_knopka ) : ?>
 			<a href="<?php echo esc_url( $djun_knopka['url'] ); ?>"
-			   class="bg-ochre border-2 border-white rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc flex items-center justify-center gap-6 w-fit"
+			   class="bg-ochre border-2 border-white rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc flex items-center justify-center gap-6 w-fit whitespace-nowrap"
 			   target="<?php echo esc_attr( $djun_knopka['target'] ); ?>">
 				<span><?php echo esc_html( $djun_knopka['title'] ); ?></span>
 				<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">

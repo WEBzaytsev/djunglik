@@ -50,7 +50,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 					<?php the_field( 'tekst' ); ?>
 				</p>
 			</div>
-			<form class="xl:max-w-[604px] max-w-[550px] shrink-0 grow-0 w-full">
+			<form class="xl:max-w-[604px] lg:max-w-[550px] max-w-[420px] shrink-0 grow-0 w-full">
 				<p class="text-center font-bold font-unbounded xl:text-heading-2-pc text-heading-3-pc mb-10.5">
 					<?php the_field( 'zagolovok_formy' ); ?>
 				</p>
@@ -65,7 +65,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						   placeholder="Введите имя"
 						   class="rounded-25 block bg-white border border-grey-600 py-6 px-7 w-full">
 				</div>
-				<div class="mb-12">
+				<div class="lg:mb-12 mb-4">
 					<label for="feedback-phone"
 						   class="mb-0.5 block text-pure-text-pc font-extrabold">
 						Телефон
@@ -76,15 +76,15 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						   placeholder="Введите телефон"
 						   class="rounded-25 block bg-white border border-grey-600 py-6 px-7 w-full">
 				</div>
-				<div class="flex items-center justify-between gap-x-8">
-					<button class="bg-red rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc w-fit">
-						Заказать
-					</button>
-					<p class="text-xs">
+				<div class="lg:flex items-center justify-between gap-x-8">
+					<p class="text-xs order-2 lg:mb-0 mb-4">
 						Нажимая на кнопку «Заказать», я даю согласие на обработку моих персональных данных в
 						соответствии с
 						<a href="#" class="text-[#6496F8] hover:underline">политикой информационной безопасности</a>
 					</p>
+					<button class="bg-red rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc w-fit order-1">
+						Заказать
+					</button>
 				</div>
 			</form>
 		</div>
