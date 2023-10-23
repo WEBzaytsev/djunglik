@@ -40,6 +40,7 @@ get_header(); ?>
 						<?php endif; ?>
 					</div>
 				<?php endif; ?>
+				<?php wp_reset_postdata(); ?>
 			</div>
 		</div>
 	</main>
