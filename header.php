@@ -22,9 +22,9 @@
 
 <body <?php body_class( 'text-grey bg-beige overflow-x-hidden md:pt-8 pt-6.5' ); ?>>
 <?php wp_body_open(); ?>
-<div class="fixed w-full bg-ochre z-20 bottom-0 top-25 left-0 transition-all duration-300 -translate-x-[120vw] mob-menu"
+<div class="fixed w-full bg-ochre z-20 bottom-0 top-25 left-0 transition-all duration-300 -translate-x-[120vw] mob-menu overflow-y-scroll pb-5"
 	 id="mob-menu">
-	<div class="px-5 py-15 h-full flex flex-col justify-between">
+	<div class="px-5 py-15 h-full flex flex-col justify-between gap-10">
 		<nav class="mob-main-navigation">
 			<?php
 			wp_nav_menu(
@@ -35,7 +35,7 @@
 			);
 			?>
 		</nav>
-		<div class="">
+		<div class="pb-10">
 			<a href="tel:<?php echo esc_attr( get_field( 'telefon', 'option' ) ); ?>"
 			   class="block mb-2 font-unbounded text-heading-4-pc font-bold">
 				<?php echo esc_html( get_field( 'telefon', 'option' ) ); ?>

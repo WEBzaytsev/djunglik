@@ -5,10 +5,21 @@ export const MobileMenu = () => {
 
 	if (!mobMenu || !mobMenuHeaderBg || !mobMenuButton) return;
 
+	const subMenus = [...document.querySelectorAll('.menu-item-has-children')];
+
 	mobMenuButton.addEventListener('click', (e) => {
 		document.documentElement.scrollTop = 0;
 		e.preventDefault();
 		document.body.classList.toggle('mob-menu-open');
 		document.body.classList.toggle('overflow-hidden');
 	});
+
+	if (subMenus.length) {
+		subMenus.forEach((subMenu) =>
+			subMenu.addEventListener('click', (e) => {
+				e.preventDefault();
+				e.currentTarget.classList.toggle('active');
+			}),
+		);
+	}
 };
