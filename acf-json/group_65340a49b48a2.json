@@ -134,7 +134,7 @@
         },
         {
             "key": "field_65340ae40c4af",
-            "label": "Ссылка на Viber",
+            "label": "Ссылка на Whatsapp",
             "name": "ssylka_na_viber",
             "aria-label": "",
             "type": "url",
@@ -222,5 +222,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697909576
+    "modified": 1698169554
 }

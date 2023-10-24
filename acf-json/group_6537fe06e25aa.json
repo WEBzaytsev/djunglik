@@ -1,9 +1,9 @@
 {
-    "key": "group_65366414a6e9b",
-    "title": "Количество отзывов на одной странице",
+    "key": "group_6537fe06e25aa",
+    "title": "Количество педагогов на одной странице",
     "fields": [
         {
-            "key": "field_65366415f9111",
+            "key": "field_6537fe06f04c2",
             "label": "Введите количество",
             "name": "reviews_count",
             "aria-label": "",
@@ -30,7 +30,7 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "143"
+                "value": "198"
             }
         ]
     ],
@@ -43,5 +43,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698168321
+    "modified": 1698168382
 }
