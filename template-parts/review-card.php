@@ -6,6 +6,7 @@
  */
 
 $djun_otzyv_id = $args['review_id'];
+$djun_is_modal = $args['is_modal'] ?? false;
 
 $djun_text = get_field( 'tekst', $djun_otzyv_id );
 $djun_yandex_url = get_field( 'ssylka_na_yandeks', $djun_otzyv_id );
@@ -13,7 +14,9 @@ $djun_max_words = 28;
 $djun_words = explode( ' ', $djun_text );
 ?>
 
-<div class="bg-white xl:p-12.5 md:p-8 p-6 rounded-25 h-auto <?php echo esc_attr( is_front_page() ? 'md:mr-8 mr-4' : '' ); ?>">
+<?php if ( ! $djun_is_modal ) : ?>
+<div class="bg-white xl:p-12.5 md:p-8 p-6 rounded-25 h-auto <?php echo esc_attr( is_front_page() || $djun_is_modal ? 'md:mr-8 mr-4' : '' ); ?>">
+	<?php endif; ?>
 	<div class="flex md:items-center items-start md:gap-x-8 gap-x-4">
 		<?php $djun_avatarka = get_field( 'avatarka', $djun_otzyv_id ); ?>
 		<?php if ( $djun_avatarka ) : ?>
@@ -24,7 +27,7 @@ $djun_words = explode( ' ', $djun_text );
 		<?php endif; ?>
 
 		<div class="">
-			<p class="font-unbounded md:mb-2.5 mb-3 font-bold <?php echo esc_attr( is_front_page() ? 'xl:text-heading-3-pc md:text-heading-4-pc text-pure-text-base' : 'text-pure-text-pc' ); ?>">
+			<p class="font-unbounded md:mb-2.5 mb-3 font-bold <?php echo esc_attr( is_front_page() || $djun_is_modal ? 'xl:text-heading-3-pc md:text-heading-4-pc text-pure-text-base' : 'text-pure-text-pc' ); ?>">
                 <?php echo get_the_title($djun_otzyv_id); // phpcs:ignore ?>
 			</p>
 			<div class="md:flex items-center gap-x-4">
@@ -45,7 +48,7 @@ $djun_words = explode( ' ', $djun_text );
 	</div>
 	<p class="xl:mt-8 mt-4">
 		<?php
-		if ( count( $djun_words ) > $djun_max_words ) {
+		if ( ! $djun_is_modal && count( $djun_words ) > $djun_max_words ) {
 			$djun_limited_words = array_slice( $djun_words, 0, $djun_max_words );
 			$djun_output = implode( ' ', $djun_limited_words ) . ' ...';
 			echo esc_html( $djun_output );
@@ -54,10 +57,12 @@ $djun_words = explode( ' ', $djun_text );
 		}
 		?>
 	</p>
-	<?php if ( ! is_front_page() ) : ?>
+	<?php if ( ! is_front_page() && ! $djun_is_modal ) : ?>
 		<?php if ( $djun_yandex_url || ( count( $djun_words ) > $djun_max_words ) ) : ?>
 			<div class="mt-8 flex w-full items-center justify-between">
-				<span class="text-sm border-dashed border-grey-900 border-b text-grey-900 cursor-pointer">
+				<span class="text-sm border-dashed border-grey-900 border-b text-grey-900 cursor-pointer"
+					  data-review-id="<?php echo esc_attr( $djun_otzyv_id ); ?>"
+					  data-modal="review">
 					<?php echo esc_html( count( $djun_words ) > $djun_max_words ? 'Читать полностью' : '' ); ?>
 				</span>
 				<?php if ( $djun_yandex_url ) : ?>
@@ -70,4 +75,6 @@ $djun_words = explode( ' ', $djun_text );
 			</div>
 		<?php endif; ?>
 	<?php endif; ?>
+<?php if ( ! $djun_is_modal ) : ?>
 </div>
+<?php endif; ?>

@@ -105,6 +105,7 @@ module.exports = {
                 'xs': ['12px', '175%'],
             },
             borderRadius: {
+                50: '50px',
                 60: '60px',
                 25: '25px',
             },

@@ -1,0 +1,12 @@
+#modal {
+
+  &.active {
+    visibility: visible;
+    z-index: 100;
+    opacity: 100;
+
+    .modal-inner {
+      transform: translateX(0);
+    }
+  }
+}

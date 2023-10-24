@@ -48,6 +48,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			</p>
 
 			<a href="#"
+			   data-modal="form"
 			   class="bg-red rounded-60 md:px-16 px-5 pt-4 pb-5 text-white font-extrabold text-pure-text-pc flex items-center justify-center gap-6 md:w-fit w-full md:max-w-none max-w-[320px] whitespace-nowrap">
 				<span><?php the_field( 'tekst_knopki' ); ?></span>
 				<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">

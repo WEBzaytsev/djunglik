@@ -5,30 +5,31 @@
  * @package djun
  */
 
+$djun_is_modal = $args['is_modal'] ?? false;
 ?>
 <form class="xl:max-w-[604px] lg:max-w-[550px] max-w-[420px] shrink-0 grow-0 w-full">
 	<p class="text-center font-bold font-unbounded xl:text-heading-2-pc md:text-heading-3-pc text-pure-text-pc md:mb-10.5 mb-12">
 		<?php the_field( 'feedback_form_zagolovok_formy', 'option' ); ?>
 	</p>
 	<div class="md:mb-6 mb-4">
-		<label for="feedback-name"
+		<label for="<?php echo esc_attr( $djun_is_modal ? 'modal-' : '' ); ?>feedback-name"
 			   class="md:mb-0.5 mb-1 block text-pure-text-pc font-extrabold">
 			Имя
 		</label>
 		<input type="text"
-			   name="feedback-name"
-			   id="feedback-name"
+			   name="<?php echo esc_attr( $djun_is_modal ? 'modal-' : '' ); ?>feedback-name"
+			   id="<?php echo esc_attr( $djun_is_modal ? 'modal-' : '' ); ?>feedback-name"
 			   placeholder="Введите имя"
 			   class="rounded-25 block bg-white border border-grey-600 md:py-6 py-4.5 px-7 w-full">
 	</div>
 	<div class="mb-12">
-		<label for="feedback-phone"
+		<label for="<?php echo esc_attr( $djun_is_modal ? 'modal-' : '' ); ?>feedback-phone"
 			   class="md:mb-0.5 mb-1 block text-pure-text-pc font-extrabold">
 			Телефон
 		</label>
 		<input type="text"
-			   name="feedback-phone"
-			   id="feedback-phone"
+			   name="<?php echo esc_attr( $djun_is_modal ? 'modal-' : '' ); ?>feedback-phone"
+			   id="<?php echo esc_attr( $djun_is_modal ? 'modal-' : '' ); ?>feedback-phone"
 			   placeholder="Введите телефон"
 			   class="rounded-25 block bg-white border border-grey-600 py-6 px-7 w-full">
 	</div>

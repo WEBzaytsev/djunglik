@@ -7,6 +7,8 @@
  * @package Djunglik
  */
 
+use JetBrains\PhpStorm\NoReturn;
+
 if ( ! defined( 'DJUNGLIK_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( 'DJUNGLIK_VERSION', '1.0.06' );
@@ -153,6 +155,8 @@ function djun_scripts() {
 	$adapty_options = [
 		'ajax_url' => $ajax_url,
 		'home_url' => get_home_url(),
+		'feedback_form_nonce'    => wp_create_nonce( 'feedback_form_nonce' ),
+		'get_review_nonce'    => wp_create_nonce( 'get_review_nonce' ),
 	];
 
 	wp_dequeue_style( 'select2' );
@@ -257,3 +261,47 @@ require get_template_directory() . '/inc/gb-block-category.php';
 require get_template_directory() . '/inc/custom-post-type.php';
 
 add_action( 'init', 'djun_review_post_type' );
+
+#[NoReturn] function djun_get_feedback_form(): void {
+	if ( isset( $_POST['feedback_form_nonce'] ) && wp_verify_nonce( $_POST['feedback_form_nonce'], 'feedback_form_nonce' ) ) {
+		ob_start();
+		get_template_part( 'template-parts/feedback-form', null, [ 'is_modal' => true ] );
+		$form = ob_get_clean();
+		wp_send_json_success( $form );
+	} else {
+		wp_send_json_error( 'Nonce verification failed!' );
+	}
+
+	wp_die();
+}
+
+add_action( 'wp_ajax_djun_get_feedback_form', 'djun_get_feedback_form' );
+add_action( 'wp_ajax_nopriv_djun_get_feedback_form', 'djun_get_feedback_form' );
+
+#[NoReturn] function djun_get_review(): void {
+	if ( isset( $_POST['get_review_nonce'] ) && wp_verify_nonce( $_POST['get_review_nonce'], 'get_review_nonce' ) ) {
+		$reviewId = isset( $_POST['review_id'] ) ? sanitize_text_field( $_POST['review_id'] ) : null;
+		if ( $reviewId !== null ) {
+			ob_start();
+			get_template_part(
+				'template-parts/review-card',
+				null,
+				[
+					'is_modal' => true,
+					'review_id' => $reviewId,
+				]
+			);
+			$review = ob_get_clean();
+			wp_send_json_success( $review );
+		} else {
+			wp_send_json_error( 'Invalid review ID.' );
+		}
+	} else {
+		wp_send_json_error( 'Nonce verification failed!' );
+	}
+
+	wp_die();
+}
+
+add_action( 'wp_ajax_djun_get_review', 'djun_get_review' );
+add_action( 'wp_ajax_nopriv_djun_get_review', 'djun_get_review' );
