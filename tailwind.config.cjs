@@ -124,7 +124,8 @@ module.exports = {
             },
             screens: {},
             gridTemplateColumns: {
-                post: '3fr 1fr'
+                post: '3fr 1fr',
+                'contacts-page': '400px auto'
             },
             gridTemplateRows: {},
             gridAutoRows: {},
