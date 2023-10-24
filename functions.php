@@ -306,3 +306,16 @@ add_action( 'wp_ajax_nopriv_djun_get_feedback_form', 'djun_get_feedback_form' );
 
 add_action( 'wp_ajax_djun_get_review', 'djun_get_review' );
 add_action( 'wp_ajax_nopriv_djun_get_review', 'djun_get_review' );
+
+function change_title_placeholders( $title ) {
+	$screen = get_current_screen();
+
+	if ( $screen->post_type == 'teachers' ) {
+		$title = 'Имя педагога';
+	} elseif ( $screen->post_type == 'reviews' ) {
+		$title = 'Имя автора отзыва';
+	}
+	return $title;
+}
+
+add_filter( 'enter_title_here', 'change_title_placeholders' );
