@@ -8,7 +8,10 @@
 get_header(); ?>
 
 	<main class="relative overflow-hidden">
-		<?php the_content(); ?>
+		<?php
+		the_content();
+		get_template_part( '/template-parts/feedback-form' );
+		?>
 	</main>
 
 <?php

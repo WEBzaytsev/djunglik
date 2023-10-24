@@ -214,9 +214,19 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 	acf_add_options_page(
 		[
-			'page_title' => 'Theme General Settings',
+			'page_title' => 'Основные настройки',
 			'menu_title' => 'Основные настройки',
 			'menu_slug' => 'theme-general-settings',
+			'capability' => 'edit_posts',
+			'redirect' => false,
+		]
+	);
+
+	acf_add_options_page(
+		[
+			'page_title' => 'Форма обратной связи',
+			'menu_title' => 'Форма обратной связи',
+			'menu_slug' => 'feedback-form',
 			'capability' => 'edit_posts',
 			'redirect' => false,
 		]

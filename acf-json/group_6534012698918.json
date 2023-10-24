@@ -1,11 +1,11 @@
 {
     "key": "group_6534012698918",
-    "title": "Block | Форма обратной связи",
+    "title": "Форма обратной связи",
     "fields": [
         {
             "key": "field_65340127f7744",
             "label": "Заголовок блока",
-            "name": "zagolovok_bloka",
+            "name": "feedback_form_zagolovok_bloka",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -25,7 +25,7 @@
         {
             "key": "field_65340158f7745",
             "label": "Текст",
-            "name": "tekst",
+            "name": "feedback_form_tekst",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -45,7 +45,7 @@
         {
             "key": "field_65340168f7746",
             "label": "Заголовок формы",
-            "name": "zagolovok_formy",
+            "name": "feedback_form_zagolovok_formy",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -66,9 +66,9 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "options_page",
                 "operator": "==",
-                "value": "acf\/feedback-form"
+                "value": "feedback-form"
             }
         ]
     ],
@@ -81,5 +81,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697907075
+    "modified": 1698142318
 }

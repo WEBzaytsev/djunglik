@@ -44,7 +44,7 @@ get_header(); ?>
 			</div>
 		</div>
 		<div class="md:mt-[250px] mt-[120px]">
-			<?php the_content(); ?>
+			<?php get_template_part( '/template-parts/feedback-form' ); ?>
 		</div>
 	</main>
 

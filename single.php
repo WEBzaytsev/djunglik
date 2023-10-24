@@ -82,8 +82,8 @@ get_header();
 			</div>
 		</div>
 
-		<div>
-			<!-- TODO: set form -->
+		<div class="md:mt-[250px] mt-[120px]">
+			<?php get_template_part( '/template-parts/feedback-form' ); ?>
 		</div>
 	</main>
 
