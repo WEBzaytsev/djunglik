@@ -261,6 +261,7 @@ require get_template_directory() . '/inc/gb-block-category.php';
 require get_template_directory() . '/inc/custom-post-type.php';
 
 add_action( 'init', 'djun_review_post_type' );
+add_action( 'init', 'djun_teachers_post_type' );
 
 #[NoReturn] function djun_get_feedback_form(): void {
 	if ( isset( $_POST['feedback_form_nonce'] ) && wp_verify_nonce( $_POST['feedback_form_nonce'], 'feedback_form_nonce' ) ) {
