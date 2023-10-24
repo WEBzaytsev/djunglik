@@ -44,10 +44,10 @@
         },
         {
             "key": "field_653124ca3c082",
-            "label": "Текст кнопки",
-            "name": "tekst_knopki",
+            "label": "Кнопка",
+            "name": "knopka",
             "aria-label": "",
-            "type": "text",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,11 +56,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "return_format": "array"
         },
         {
             "key": "field_653124d93c083",
@@ -106,5 +102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697730861
+    "modified": 1698170234
 }
