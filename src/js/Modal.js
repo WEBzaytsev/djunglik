@@ -3,6 +3,10 @@ export const Modal = class {
 	modalContent = document.getElementById('modal-content');
 	hideModalCross = document.getElementById('hide-modal-cross');
 	lastOpenedModal = null;
+	touchData = {
+		startY: 0,
+		currentY: 0,
+	};
 
 	/**
 	 * @param {Object} options - The options object.
@@ -82,6 +86,28 @@ export const Modal = class {
 		this.hideModalCross.addEventListener('click', this.hide.bind(this));
 		this.modal.addEventListener('click', (e) => {
 			if (e.target === e.currentTarget) this.hide();
+		});
+		this.modal.addEventListener('touchstart', (e) => {
+			if (
+				e.target === e.currentTarget ||
+				e.target.classList.contains('modal-inner')
+			) {
+				this.touchData.startY = e.touches[0].clientY;
+			}
+		});
+
+		this.modal.addEventListener('touchmove', (e) => {
+			if (
+				e.target === e.currentTarget ||
+				e.target.classList.contains('modal-inner')
+			) {
+				this.touchData.currentY = e.touches[0].clientY;
+				const deltaY = this.touchData.currentY - this.touchData.startY;
+
+				if (deltaY > 50) {
+					this.hide();
+				}
+			}
 		});
 	}
 };

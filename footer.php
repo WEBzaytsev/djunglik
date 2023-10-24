@@ -108,17 +108,19 @@
 	</footer>
 </div>
 </div>
+
 <div id="modal"
-	 class="modal fixed top-0 left-0 bottom-0 right-0 -z-50 bg-grey/30 opacity-0 invisible transition-all duration-300">
-	<div class="modal-inner bg-white w-1/2 rounded-tl-50 rounded-bl-50 h-full relative ml-auto p-16 transition-all duration-300 translate-x-[100vw]">
+	 class="modal fixed top-0 left-0 bottom-0 right-0 -z-50 bg-grey/30 opacity-0 invisible transition-all duration-300 md:block flex items-end">
+	<div class="modal-inner bg-white xl:w-1/2 lg:w-[60%] md:w-[70%] w-full md:rounded-tl-50 rounded-tl-25 md:rounded-bl-50 md:rounded-tr-0 rounded-tr-25 md:h-full h-[70vh] relative md:ml-auto md:px-16 px-5 md:pt-16 pt-10 md:pb-16 pb-7.5 transition-all duration-300 md:translate-x-[100vw] md:translate-y-0 translate-y-[100vh]">
 		<div id="hide-modal-cross"
-			 class="absolute z-10 block cursor-pointer w-5 h-5 top-8 left-auto right-8 group">
+			 class="absolute z-10 cursor-pointer w-5 h-5 top-8 left-auto right-8 group md:block hidden">
 			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path fill-rule="evenodd" clip-rule="evenodd"
 					  d="M10 12.2222L17.7778 20L20 17.7778L12.2222 10L20 2.22222L17.7778 0L10 7.77778L2.22222 0L0 2.22222L7.77778 10L0 17.7778L2.22222 20L10 12.2222Z"
 					  class="fill-black/60 group-hover:fill-black"/>
 			</svg>
 		</div>
+		<div class="absolute md:hidden block w-17.5 h-1 bg-grey-600 z-10 top-5 left-1/2 -translate-x-1/2 rounded-full"></div>
 		<div id="modal-content" class="max-h-full overflow-y-auto">
 			<!-- todo: set loader -->
 		</div>
