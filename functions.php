@@ -263,39 +263,57 @@ require get_template_directory() . '/inc/custom-post-type.php';
 add_action( 'init', 'djun_review_post_type' );
 add_action( 'init', 'djun_teachers_post_type' );
 
+/**
+ * Handler for async get feedback form.
+ *
+ * @return void
+ */
 #[NoReturn] function djun_get_feedback_form(): void {
-	if ( isset( $_POST['feedback_form_nonce'] ) && wp_verify_nonce( $_POST['feedback_form_nonce'], 'feedback_form_nonce' ) ) {
-		ob_start();
-		get_template_part( 'template-parts/feedback-form', null, [ 'is_modal' => true ] );
-		$form = ob_get_clean();
-		wp_send_json_success( $form );
+	if ( isset( $_POST['feedback_form_nonce'] ) ) {
+		$nonce = sanitize_text_field( wp_unslash( $_POST['feedback_form_nonce'] ) );
+		if ( wp_verify_nonce( $nonce, 'feedback_form_nonce' ) ) {
+			ob_start();
+			get_template_part( 'template-parts/feedback-form', null, [ 'is_modal' => true ] );
+			$form = ob_get_clean();
+			wp_send_json_success( $form );
+		} else {
+			wp_send_json_error( 'Nonce verification failed!' );
+		}
 	} else {
 		wp_send_json_error( 'Nonce verification failed!' );
 	}
 
 	wp_die();
-}
+} // phpcs:ignore
 
 add_action( 'wp_ajax_djun_get_feedback_form', 'djun_get_feedback_form' );
 add_action( 'wp_ajax_nopriv_djun_get_feedback_form', 'djun_get_feedback_form' );
 
+/**
+ * Handler for async get Review card by id.
+ *
+ * @return void
+ */
 #[NoReturn] function djun_get_review(): void {
-	if ( isset( $_POST['get_review_nonce'] ) && wp_verify_nonce( $_POST['get_review_nonce'], 'get_review_nonce' ) ) {
-		$reviewId = isset( $_POST['review_id'] ) ? sanitize_text_field( $_POST['review_id'] ) : null;
-		if ( $reviewId !== null ) {
-			ob_start();
-			get_template_part(
-				'template-parts/review-card',
-				null,
-				[
-					'is_modal' => true,
-					'review_id' => $reviewId,
-				]
-			);
-			$review = ob_get_clean();
-			wp_send_json_success( $review );
-		} else {
-			wp_send_json_error( 'Invalid review ID.' );
+	if ( isset( $_POST['get_review_nonce'] ) ) {
+		$nonce = sanitize_text_field( wp_unslash( $_POST['get_review_nonce'] ) );
+		if ( wp_verify_nonce( $nonce, 'get_review_nonce' ) ) {
+			$review_id = isset( $_POST['review_id'] ) ? sanitize_text_field( wp_unslash( $_POST['review_id'] ) ) : null;
+			if ( null !== $review_id ) {
+				ob_start();
+				get_template_part(
+					'template-parts/review-card',
+					null,
+					[
+						'is_modal' => true,
+						'review_id' => $review_id,
+					]
+				);
+				$review = ob_get_clean();
+				wp_send_json_success( $review );
+			} else {
+				wp_send_json_error( 'Invalid review ID.' );
+			}
 		}
 	} else {
 		wp_send_json_error( 'Nonce verification failed!' );
@@ -307,15 +325,21 @@ add_action( 'wp_ajax_nopriv_djun_get_feedback_form', 'djun_get_feedback_form' );
 add_action( 'wp_ajax_djun_get_review', 'djun_get_review' );
 add_action( 'wp_ajax_nopriv_djun_get_review', 'djun_get_review' );
 
-function change_title_placeholders( $title ) {
+/**
+ * Change title placeholders for custom post types.
+ *
+ * @param string $title title placeholder.
+ * @return string
+ */
+function djun_change_title_placeholders( string $title ): string {
 	$screen = get_current_screen();
 
-	if ( $screen->post_type == 'teachers' ) {
+	if ( 'teachers' == $screen->post_type ) {
 		$title = 'Имя педагога';
-	} elseif ( $screen->post_type == 'reviews' ) {
+	} elseif ( 'reviews' == $screen->post_type ) {
 		$title = 'Имя автора отзыва';
 	}
 	return $title;
 }
 
-add_filter( 'enter_title_here', 'change_title_placeholders' );
+add_filter( 'enter_title_here', 'djun_change_title_placeholders' );
