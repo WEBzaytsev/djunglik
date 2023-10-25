@@ -1,0 +1,24 @@
+#services-tabs {
+  p[data-tab-id] {
+
+    &:hover {
+      @apply text-ochre;
+    }
+
+    &.active {
+
+      & > span.tab-decor {
+        display: block;
+      }
+    }
+  }
+
+  .tabs-content {
+    div[data-tab] {
+
+      &.active {
+        display: grid;
+      }
+    }
+  }
+}

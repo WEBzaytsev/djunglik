@@ -9,13 +9,16 @@
 @import 'components/mob_menu';
 @import 'components/pagination';
 @import 'components/modal';
+@import 'components/services_tabs';
 
-html {
+html,
+.font-manrope {
   font-family: 'Manrope', sans-serif;
 }
 
 @supports (font-variation-settings: normal) {
-  html {
+  html,
+  .font-manrope {
     font-family: 'Manrope var', sans-serif;
   }
 }
@@ -38,6 +41,9 @@ html {
   opacity: 1;
 }
 
-.news-slider-pagination > span.active {
-  @apply bg-ochre;
+.services-slider-pagination,
+.news-slider-pagination {
+  & > span.active {
+    @apply bg-ochre;
+  }
 }

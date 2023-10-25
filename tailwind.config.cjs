@@ -91,7 +91,11 @@ module.exports = {
                     800: '#046E52',
                 }
             },
-            fontFamily: {},
+            fontFamily: {
+                unbounded: ['Unbounded var', 'sans-serif'],
+                manrope: ['Manrope var', 'sans-serif'],
+                badscript: ['Bad Script', 'sans-serif'],
+            },
             lineHeight: {},
             fontSize: {
                 'heading-1-pc': ['48px', '140%'],
