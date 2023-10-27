@@ -46,6 +46,15 @@ $djun_words = explode( ' ', $djun_text );
 			</div>
 		</div>
 	</div>
+
+	<?php if ( $djun_is_modal && $djun_yandex_url ) : ?>
+		<a href="<?php echo esc_url( $djun_yandex_url ); ?>"
+		   target="_blank"
+		   class="text-ochre md:text-pure-text-pc text-pure-text-base hover:underline md:mt-8 mt-4 block">
+			Читать на Яндекс
+		</a>
+	<?php endif; ?>
+
 	<p class="xl:mt-8 mt-4">
 		<?php
 		if ( ! $djun_is_modal && count( $djun_words ) > $djun_max_words ) {
