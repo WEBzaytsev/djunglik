@@ -19,11 +19,12 @@ export const MobileMenu = () => {
 	});
 
 	if (subMenus.length) {
-		subMenus.forEach((subMenu) =>
-			subMenu.addEventListener('click', (e) => {
+		subMenus.forEach((subMenu) => {
+			const link = subMenu.querySelector('a[href="#"]');
+			link.addEventListener('click', (e) => {
 				e.preventDefault();
-				e.currentTarget.classList.toggle('active');
-			}),
-		);
+				subMenu.classList.toggle('active');
+			});
+		});
 	}
 };
