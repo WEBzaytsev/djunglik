@@ -9,6 +9,7 @@
  * @package Djunglik
  */
 
+$djun_is_leaves = $args['is_leaves'] ?? true;
 ?>
 
 <div class="relative">
@@ -20,14 +21,14 @@
 				  fill="#046E52"/>
 		</svg>
 
-		<?php if ( $args['is_leaves'] ) : ?>
-		<div class="absolute z-10 -left-[134px] -top-[195px] md:block hidden">
-			<?php get_template_part( '/vector-images/footer-leaves', 'left' ); ?>
-		</div>
+		<?php if ( $djun_is_leaves ) : ?>
+			<div class="absolute z-10 -left-[134px] -top-[195px] md:block hidden">
+				<?php get_template_part( '/vector-images/footer-leaves', 'left' ); ?>
+			</div>
 
-		<div class="absolute z-10 left-auto -right-[55px] -top-[196px] md:block hidden">
-			<?php get_template_part( '/vector-images/footer-leaves', 'right' ); ?>
-		</div>
+			<div class="absolute z-10 left-auto -right-[55px] -top-[196px] md:block hidden">
+				<?php get_template_part( '/vector-images/footer-leaves', 'right' ); ?>
+			</div>
 		<?php endif; ?>
 
 		<div class="relative z-30 text-white bg-green-800 md:pt-10 pt-16.5 px-5">
