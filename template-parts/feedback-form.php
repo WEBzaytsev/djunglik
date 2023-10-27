@@ -34,7 +34,7 @@ $djun_is_modal = $args['is_modal'] ?? false;
 			   class="rounded-25 block bg-white border border-grey-600 py-6 px-7 w-full">
 	</div>
 	<div class="lg:flex items-center justify-between gap-x-8">
-		<button class="bg-red rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc md:w-fit w-full lg:mb-0 mb-6">
+		<button class="bg-red hover:bg-red-500 transition-all duration-300 rounded-60 px-16 pt-4 pb-5 text-white font-extrabold text-pure-text-pc md:w-fit w-full lg:mb-0 mb-6">
 			Заказать
 		</button>
 		<p class="text-xs">

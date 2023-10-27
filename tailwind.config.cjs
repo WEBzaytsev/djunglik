@@ -84,9 +84,15 @@ module.exports = {
                     600: '#666',
                     900: '#999'
                 },
-                red: '#E31C21',
+                red: {
+                    DEFAULT: '#E31C21',
+                    500: '#f00',
+                },
                 beige: '#FCF5EB',
-                ochre: '#FD9B28',
+                ochre: {
+                    DEFAULT: '#FD9B28',
+                    500: '#FFA25E'
+                },
                 green: {
                     800: '#046E52',
                 }
