@@ -16,6 +16,10 @@
       font-weight: 600;
       white-space: nowrap;
 
+      &.current-menu-item {
+        @apply text-ochre;
+      }
+
       &:hover {
         @apply text-ochre;
         text-decoration: underline;
@@ -90,6 +94,10 @@
       line-height: 140%;
       margin: 0;
       padding: 0;
+
+      &.current-menu-item {
+        text-decoration: underline;
+      }
 
       &.menu-item-has-children {
         position: relative;
