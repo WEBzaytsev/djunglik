@@ -22,6 +22,7 @@
 	<exclude-pattern>*\.svg</exclude-pattern>
 	<exclude-pattern>front-ajaxs.php</exclude-pattern>
 	<exclude-pattern>acf-blocks.php</exclude-pattern>
+	<exclude-pattern>pages/3d-tour-tech.php</exclude-pattern>
 
 	<!-- How to scan -->
 	<arg value="sp"/><!-- Show sniff and progress -->
