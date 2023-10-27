@@ -44,10 +44,10 @@
         },
         {
             "key": "field_653163e855f2c",
-            "label": "Ссылка на видео",
-            "name": "ssylka_na_video",
+            "label": "Видео",
+            "name": "video",
             "aria-label": "",
-            "type": "url",
+            "type": "file",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,8 +56,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_653163f655f2d",
@@ -103,5 +106,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697735704
+    "modified": 1698411193
 }

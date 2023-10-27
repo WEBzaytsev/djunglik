@@ -5,6 +5,7 @@ import { Modal } from './Modal.js';
 import { ServicesSlider } from './ServicesSlider.js';
 import { ServicesTabs } from './ServicesTabs.js';
 import { Menu } from './Menu.js';
+import * as fslightbox from 'fslightbox';
 
 (function () {
 	const modalFormButtons = [
@@ -31,6 +32,7 @@ import { Menu } from './Menu.js';
 			}),
 	);
 
+	refreshFsLightbox();
 	Menu();
 	MobileMenu();
 	ReviewsSlider();

@@ -20,14 +20,11 @@ get_header();
 					</h2>
 
 					<?php $djun_kartinka = get_field( 'poster_dlya_video' ); ?>
+					<?php $djun_video = get_field( 'video' ); ?>
 					<?php if ( $djun_kartinka ) : ?>
 						<div class="relative z-10 md:mb-0 mb-12.5">
 							<div class="absolute z-10 lg:top-auto -top-11.5 left-auto lg:-bottom-5 lg:-right-[94px] -right-[54px]">
 								<?php get_template_part( '/vector-images/front-page-second-section', 'img-bg' ); ?>
-							</div>
-
-							<div class="absolute left-[42.66%] top-[38.84%] z-30">
-								<?php get_template_part( '/vector-images/icon', 'play' ); ?>
 							</div>
 
 							<svg class="absolute -z-50 opacity-0">
@@ -39,12 +36,23 @@ get_header();
 								</defs>
 							</svg>
 
-							<img src="<?php echo esc_url( $djun_kartinka['url'] ); ?>"
-								 class="relative z-20 object-cover object-center"
-								 width="<?php echo esc_attr( $djun_kartinka['width'] / 2 ); ?>"
-								 height="<?php echo esc_attr( $djun_kartinka['height'] / 2 ); ?>"
-								 style="clip-path: url(#mask-path); aspect-ratio: 593/605;"
-								 alt="<?php echo esc_attr( $djun_kartinka['alt'] ); ?>"/>
+							<?php if ( $djun_video['url'] ) : ?>
+								<a href="<?php echo esc_url( $djun_video['url'] ); ?>"
+								   data-fslightbox="gallery"
+								   class="relative z-20">
+									<div class="absolute left-[42.66%] top-[38.84%] z-30">
+										<?php get_template_part( '/vector-images/icon', 'play' ); ?>
+									</div>
+							<?php endif; ?>
+									<img src="<?php echo esc_url( $djun_kartinka['url'] ); ?>"
+										 class="relative z-20 object-cover object-center"
+										 width="<?php echo esc_attr( $djun_kartinka['width'] / 2 ); ?>"
+										 height="<?php echo esc_attr( $djun_kartinka['height'] / 2 ); ?>"
+										 style="clip-path: url(#mask-path); aspect-ratio: 593/605;"
+										 alt="<?php echo esc_attr( $djun_kartinka['alt'] ); ?>"/>
+							<?php if ( $djun_video['url'] ) : ?>
+								</a>
+							<?php endif; ?>
 						</div>
 					<?php endif; ?>
 

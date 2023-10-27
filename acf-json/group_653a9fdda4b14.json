@@ -28,6 +28,26 @@
             "preview_size": "medium"
         },
         {
+            "key": "field_653bb3de811cf",
+            "label": "Видео",
+            "name": "video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_653aa0086071b",
             "label": "Краткий текст",
             "name": "kratkij_tekst",
@@ -247,5 +267,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698341112
+    "modified": 1698411502
 }

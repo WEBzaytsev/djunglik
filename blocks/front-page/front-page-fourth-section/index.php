@@ -52,9 +52,10 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 				</p>
 			</div>
 			<div class="relative md:ml-0 -ml-6">
-				<?php $djun_video_url = get_field( 'ssylka_na_video' ); ?>
+				<?php $djun_video = get_field( 'video' ); ?>
 
-				<a href="<?php echo esc_url( $djun_video_url ); ?>"
+				<a href="<?php echo esc_url( $djun_video['url'] ); ?>"
+				   data-fslightbox="gallery"
 				   class="">
 					<?php $djun_poster_k_video = get_field( 'poster_k_video' ); ?>
 					<?php if ( $djun_poster_k_video ) : ?>
