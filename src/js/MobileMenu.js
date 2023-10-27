@@ -5,7 +5,11 @@ export const MobileMenu = () => {
 
 	if (!mobMenu || !mobMenuHeaderBg || !mobMenuButton) return;
 
-	const subMenus = [...document.querySelectorAll('.menu-item-has-children')];
+	const subMenus = [
+		...document.querySelectorAll(
+			'.mob-main-navigation .menu-item-has-children',
+		),
+	];
 
 	mobMenuButton.addEventListener('click', (e) => {
 		document.documentElement.scrollTop = 0;

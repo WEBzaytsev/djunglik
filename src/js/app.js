@@ -4,6 +4,7 @@ import { MobileMenu } from './MobileMenu.js';
 import { Modal } from './Modal.js';
 import { ServicesSlider } from './ServicesSlider.js';
 import { ServicesTabs } from './ServicesTabs.js';
+import { Menu } from './Menu.js';
 
 (function () {
 	const modalFormButtons = [
@@ -30,6 +31,7 @@ import { ServicesTabs } from './ServicesTabs.js';
 			}),
 	);
 
+	Menu();
 	MobileMenu();
 	ReviewsSlider();
 	NewsSlider();
