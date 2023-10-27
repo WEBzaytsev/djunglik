@@ -132,7 +132,9 @@ module.exports = {
                 huge: '1224px',
                 wide: '1300px',
             },
-            screens: {},
+            screens: {
+                '2xl': '1440px'
+            },
             gridTemplateColumns: {
                 post: '3fr 1fr',
                 'contacts-page': '400px auto'

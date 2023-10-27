@@ -24,7 +24,7 @@
 $djun_block_slug = 'reviews';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-30 md:mt-10 md:pt-[78px] pt-10 md:pb-25 pb-[220px] bg-ochre px-5';
+$djun_classes = 'relative z-30 md:mt-10 2xl:pb-[140px] md:pt-[78px] pt-10 md:pb-25 pb-[220px] bg-ochre px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -36,7 +36,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			  fill="#FD9B28"/>
 	</svg>
 
-	<div class="absolute top-auto lg:-bottom-[93px] md:-bottom-[8%] -bottom-7.5 md:left-0 -left-[340px] h-auto w-full z-20">
+	<div class="absolute top-auto lg:-bottom-[17%] md:-bottom-[8%] -bottom-7.5 md:left-0 -left-[340px] h-auto w-full z-20">
 		<?php get_template_part( '/vector-images/front-page-reviews', 'tiger' ); ?>
 	</div>
 <?php endif; ?>
