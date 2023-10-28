@@ -6,6 +6,7 @@ import { ServicesSlider } from './ServicesSlider.js';
 import { ServicesTabs } from './ServicesTabs.js';
 import { Menu } from './Menu.js';
 import * as fslightbox from 'fslightbox';
+import { ValuesSlider } from './ValuesSlider.js';
 
 (function () {
 	const modalFormButtons = [
@@ -39,4 +40,5 @@ import * as fslightbox from 'fslightbox';
 	NewsSlider();
 	ServicesSlider();
 	ServicesTabs();
+	ValuesSlider();
 })();
