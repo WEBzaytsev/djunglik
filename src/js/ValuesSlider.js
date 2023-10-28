@@ -26,6 +26,7 @@ export const ValuesSlider = () => {
 		loop: false,
 		noSwiping: false,
 		slidesPerView: 'auto',
+		spaceBetween: 110,
 		pagination: {
 			el: '.values-slider-pagination',
 			type: 'bullets',

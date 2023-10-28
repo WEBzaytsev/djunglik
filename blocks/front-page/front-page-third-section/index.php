@@ -30,7 +30,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 
 
 	<div class="xl:max-w-[1307px] max-w-[970px] mx-auto relative z-10">
-		<h2 class="xl:text-heading-1-pc text-heading-2-pc text-center mb-11.5 font-bold font-unbounded">
+		<h2 class="xl:text-heading-1-pc text-heading-2-pc text-center md:mb-11.5 mb-25 font-bold font-unbounded">
 			<?php the_field( 'zagolovok' ); ?>
 		</h2>
 
@@ -46,7 +46,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 					$djun_item_text = get_sub_field( 'tekst' );
 					?>
 					<?php if ( 0 === $djun_item_count ) : ?>
-					<div class="lg:absolute relative w-fit lg:mx-0 mx-auto lg:top-0 lg:left-0 z-40">
+					<div class="lg:absolute relative w-fit lg:mx-0 mx-auto lg:top-0 lg:left-0 z-40 sm:h-auto h-full sm:block flex items-center">
 						<?php if ( ! $djun_is_admin ) : ?>
 							<svg width="691" height="659"
 								 class="sm:relative absolute sm:left-auto left-1/2 sm:top-auto top-1/2 sm:translate-x-0 -translate-x-1/2 sm:translate-y-0 -translate-y-1/2 z-10 block h-auto xl:w-[691px] w-[547px]"
@@ -65,7 +65,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						</div>
 					</div>
 				<?php elseif ( 1 === $djun_item_count ) : ?>
-					<div class="lg:absolute relative w-fit lg:mx-0 mx-auto lg:top-2 lg:left-auto lg:right-0 z-30">
+					<div class="lg:absolute relative w-fit lg:mx-0 mx-auto lg:top-2 lg:left-auto lg:right-0 z-30 sm:h-auto h-full sm:block flex items-center">
 						<?php if ( ! $djun_is_admin ) : ?>
 							<svg width="727" height="665" viewBox="0 0 727 665" fill="none"
 								 class="sm:relative absolute sm:left-auto left-1/2 sm:top-auto top-1/2 sm:translate-x-0 -translate-x-1/2 sm:translate-y-0 -translate-y-1/2 h-auto xl:w-[727px] w-[580px] block"
@@ -84,7 +84,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						</div>
 					</div>
 				<?php elseif ( 2 === $djun_item_count ) : ?>
-					<div class="lg:absolute relative w-fit lg:mx-0 mx-auto lg:top-auto lg:bottom-0 lg:left-2.5 z-20">
+					<div class="lg:absolute relative w-fit lg:mx-0 mx-auto lg:top-auto lg:bottom-0 lg:left-2.5 z-20 sm:h-auto h-full sm:block flex items-center">
 						<?php if ( ! $djun_is_admin ) : ?>
 							<svg width="712" height="664" viewBox="0 0 712 664" fill="none"
 								 class="sm:relative absolute sm:left-auto left-1/2 sm:top-auto top-1/2 sm:translate-x-0 -translate-x-1/2 sm:translate-y-0 -translate-y-1/2 block xl:w-[712px] h-auto w-[535px]"
@@ -103,7 +103,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						</div>
 					</div>
 				<?php elseif ( 3 === $djun_item_count ) : ?>
-					<div class="lg:absolute relative w-fit lg:mx-0 mx-auto lg:top-auto lg:bottom-6.5 lg:left-auto lg:right-13 z-10">
+					<div class="lg:absolute relative w-fit lg:mx-0 mx-auto lg:top-auto lg:bottom-6.5 lg:left-auto lg:right-13 z-10 sm:h-auto h-full sm:block flex items-center">
 						<?php if ( ! $djun_is_admin ) : ?>
 							<svg width="665" height="703" viewBox="0 0 665 703" fill="none"
 								 class="sm:relative absolute sm:left-auto left-1/2 sm:top-auto top-1/2 sm:translate-x-0 -translate-x-1/2 sm:translate-y-0 -translate-y-1/2 block h-auto xl:w-[665px] w-[530px]"
