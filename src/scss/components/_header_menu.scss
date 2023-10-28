@@ -1,8 +1,8 @@
 .main-navigation {
 
   #main-menu {
-    @apply xl:gap-x-8
-    gap-x-5;
+    @apply xl:gap-x-6
+    gap-x-4;
     display: flex;
     align-items: center;
     padding: 0;
@@ -12,7 +12,7 @@
       @apply text-grey;
       margin: 0;
       padding: 0;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
       white-space: nowrap;
 
