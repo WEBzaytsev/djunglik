@@ -1,0 +1,15 @@
+{
+    "name": "acf/virtual-tour",
+    "title": "3d Tour",
+    "description": "3d Tour",
+    "category": "front-page",
+    "icon": "align-left",
+    "apiVersion": 2,
+    "keywords": [
+        "3d tour"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php"
+    }
+}
