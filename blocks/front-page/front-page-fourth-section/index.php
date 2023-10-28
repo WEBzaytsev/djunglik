@@ -24,7 +24,7 @@
 $djun_block_slug = 'front-page-fourth-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-20 xl:mt-5 xl:pt-4.5 md:pb-[263px] pb-[238px] bg-white px-5';
+$djun_classes = 'relative z-20 xl:mt-5 xl:pt-4.5 md:pt-0 pt-20 md:pb-[136px] pb-[238px] bg-white px-5';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 <?php if ( ! $djun_is_admin ) : ?>
@@ -90,7 +90,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	<div class="absolute z-30 lg:-left-[104px] -left-18 -bottom-[121px] top-auto md:block hidden">
 		<?php get_template_part( '/vector-images/front-page-fourth-section-leaves-left' ); ?>
 	</div>
-	<div class="absolute z-30 left-auto md:right-0 -right-[70px] top-auto xl:bottom-0 md:-bottom-25 -bottom-20">
+	<div class="absolute z-30 left-auto -right-[70px] top-auto -bottom-[247px]">
 		<?php get_template_part( '/vector-images/front-page-fourth-section-lion' ); ?>
 	</div>
 <?php endif; ?>
