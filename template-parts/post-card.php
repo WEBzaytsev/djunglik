@@ -22,10 +22,12 @@ $djun_thumbnail = get_the_post_thumbnail_url( $djun_otzyv_id );
 	</a>
 	<div class="xl:p-8 p-6">
 		<a href="<?php echo esc_attr( get_permalink( $djun_otzyv_id ) ); ?>"
-		   class="md:mb-6 mb-4 md:text-heading-4-pc text-pure-text-base font-bold block font-unbounded hover:underline">
-			<?php echo esc_html( get_the_title( $djun_otzyv_id ) ); ?>
+		   class="md:mb-6 mb-4 md:text-heading-4-pc text-pure-text-base font-bold block font-unbounded hover:underline h-[56px]">
+			<span class="line-clamp-2">
+				<?php echo esc_html( get_the_title( $djun_otzyv_id ) ); ?>
+			</span>
 		</a>
-		<p class="md:text-pure-text-pc text-sm">
+		<p class="md:text-pure-text-pc text-sm line-clamp-5">
 			<?php echo esc_html( $djun_post->post_excerpt ); ?>
 		</p>
 	</div>
