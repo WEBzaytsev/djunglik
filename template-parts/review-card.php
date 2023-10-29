@@ -55,7 +55,7 @@ $djun_words = explode( ' ', $djun_text );
 		</a>
 	<?php endif; ?>
 
-	<p class="xl:mt-8 mt-4 line-clamp-3">
+	<p class="xl:mt-8 mt-4 <?php echo esc_attr( $djun_is_modal ? '' : 'line-clamp-3' ); ?>">
 		<?php echo esc_html( $djun_text ); ?>
 	</p>
 	<?php if ( ! is_front_page() && ! $djun_is_modal ) : ?>
