@@ -7,6 +7,7 @@ import { ServicesTabs } from './ServicesTabs.js';
 import { Menu } from './Menu.js';
 import * as fslightbox from 'fslightbox';
 import { ValuesSlider } from './ValuesSlider.js';
+import { FeedbackForm } from './FeedbackForm.js';
 
 (function () {
 	const modalFormButtons = [
@@ -14,6 +15,10 @@ import { ValuesSlider } from './ValuesSlider.js';
 	];
 	const modalReviewButtons = [
 		...document.querySelectorAll('[data-modal="review"]'),
+	];
+
+	const forms = [
+		...document.querySelectorAll('form[data-form="djun-feedback"]'),
 	];
 
 	modalFormButtons.forEach(
@@ -32,6 +37,8 @@ import { ValuesSlider } from './ValuesSlider.js';
 				reviewId: modalReviewButton.dataset.reviewId,
 			}),
 	);
+
+	forms.forEach((form) => new FeedbackForm(form));
 
 	refreshFsLightbox();
 	Menu();

@@ -1,0 +1,118 @@
+.loader {
+  z-index: -1000;
+
+  &.active {
+    opacity: 1;
+    z-index: 10000;
+  }
+}
+
+body > .loader {
+  position: fixed;
+}
+
+@keyframes ldio-inner {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+.ldio-inner div {
+  left: 98.735px;
+  top: 42.315px;
+  animation: ldio-inner linear 2.127659574468085s infinite;
+  transform-origin: 9.765px 66.185px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.ldio-inner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.9342359767891684s;
+
+}
+
+.ldio-inner div:nth-child(2) {
+  transform: rotate(32.72727272727273deg);
+  animation-delay: -1.7408123791102514s;
+
+}
+
+.ldio-inner div:nth-child(3) {
+  transform: rotate(65.45454545454545deg);
+  animation-delay: -1.5473887814313347s;
+
+}
+
+.ldio-inner div:nth-child(4) {
+  transform: rotate(98.18181818181819deg);
+  animation-delay: -1.3539651837524178s;
+
+}
+
+.ldio-inner div:nth-child(5) {
+  transform: rotate(130.9090909090909deg);
+  animation-delay: -1.1605415860735009s;
+
+}
+
+.ldio-inner div:nth-child(6) {
+  transform: rotate(163.63636363636363deg);
+  animation-delay: -0.9671179883945842s;
+
+}
+
+.ldio-inner div:nth-child(7) {
+  transform: rotate(196.36363636363637deg);
+  animation-delay: -0.7736943907156674s;
+
+}
+
+.ldio-inner div:nth-child(8) {
+  transform: rotate(229.0909090909091deg);
+  animation-delay: -0.5802707930367504s;
+
+}
+
+.ldio-inner div:nth-child(9) {
+  transform: rotate(261.8181818181818deg);
+  animation-delay: -0.3868471953578337s;
+
+}
+
+.ldio-inner div:nth-child(10) {
+  transform: rotate(294.54545454545456deg);
+  animation-delay: -0.19342359767891684s;
+
+}
+
+.ldio-inner div:nth-child(11) {
+  transform: rotate(327.27272727272725deg);
+  animation-delay: 0s;
+
+}
+
+.loadingio-spinner-spinner-wrap {
+  width: 217px;
+  height: 217px;
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.ldio-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+
+.ldio-inner div {
+  box-sizing: content-box;
+}

@@ -1,3 +1,5 @@
+import { FeedbackForm } from './FeedbackForm.js';
+
 export const Modal = class {
 	modal = document.getElementById('modal');
 	modalContent = document.getElementById('modal-content');
@@ -45,9 +47,12 @@ export const Modal = class {
 			switch (this.type) {
 				case 'form':
 					const form = new ModalForm();
-					form.get_html().then(
-						(res) => (this.modalContent.innerHTML = res.data),
-					);
+					form.get_html()
+						.then((res) => (this.modalContent.innerHTML = res.data))
+						.then(() => {
+							const form = document.querySelector('#modal form');
+							if (form) new FeedbackForm(form);
+						});
 					break;
 				case 'review':
 					const review = new ModalReview(Number(this.reviewId));
@@ -78,7 +83,6 @@ export const Modal = class {
 
 	destroy() {
 		this.lastOpenedModal = {};
-		this.modalContent.innerHTML = '';
 	}
 
 	init() {
@@ -114,7 +118,7 @@ export const Modal = class {
 
 class ModalForm {
 	constructor() {
-		console.log('form modal');
+		// console.log('form modal');
 	}
 
 	async get_html() {
@@ -141,7 +145,7 @@ class ModalReview {
 	/** @param {number} id */
 	constructor(id) {
 		this.reviewId = id;
-		console.log('Review id: ', id);
+		// console.log('Review id: ', id);
 	}
 
 	async get_html() {
