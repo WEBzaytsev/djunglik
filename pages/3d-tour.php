@@ -12,7 +12,7 @@ get_header();
 		<?php djun_breadcrumbs(); ?>
 
 		<div class="relative z-10 px-5 md:mt-21 mt-4 md:mb-[190px] mb-[235px]">
-			<iframe src="<?php echo esc_url( site_url( '/3d-tur-tehnicheskaya?media-index=1' ) ); ?>"
+			<iframe src="<?php echo esc_url( site_url( '/3dtour?media-index=1' ) ); ?>"
 					name="Виртуальный тур"
 					width="100%" height="600"
 					frameborder="0"
