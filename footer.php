@@ -114,7 +114,7 @@ $djun_is_leaves = $args['is_leaves'] ?? true;
 
 <div id="modal"
 	 class="modal fixed top-0 left-0 bottom-0 right-0 -z-50 bg-grey/30 opacity-0 invisible transition-all duration-300 md:block flex items-end">
-	<div class="modal-inner bg-white xl:w-1/2 lg:w-[60%] md:w-[70%] w-full md:rounded-tl-50 rounded-tl-25 md:rounded-bl-50 md:rounded-tr-0 rounded-tr-25 md:h-full h-[70vh] relative md:ml-auto md:px-16 px-5 md:pt-16 pt-10 md:pb-16 pb-7.5 transition-all duration-300 md:translate-x-[100vw] md:translate-y-0 translate-y-[100vh]">
+	<div class="modal-inner bg-white xl:w-[700px] lg:w-[60%] md:w-[70%] w-full md:rounded-tl-50 rounded-tl-25 md:rounded-bl-50 md:rounded-tr-0 rounded-tr-25 md:h-full h-[70vh] relative md:ml-auto md:px-16 px-5 md:pt-16 pt-10 md:pb-16 pb-7.5 transition-all duration-300 md:translate-x-[100vw] md:translate-y-0 translate-y-[100vh]">
 		<div id="hide-modal-cross"
 			 class="absolute z-10 cursor-pointer w-5 h-5 top-8 left-auto right-8 group md:block hidden">
 			<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
