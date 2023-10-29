@@ -43,7 +43,7 @@ get_header(); ?>
 				<?php wp_reset_postdata(); ?>
 			</div>
 		</div>
-		<div class="md:mt-[250px] mt-[120px]">
+		<div class="mt-[250px]">
 			<?php get_template_part( '/template-parts/feedback-form-block' ); ?>
 		</div>
 	</main>
