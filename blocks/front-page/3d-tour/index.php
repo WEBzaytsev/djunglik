@@ -30,8 +30,8 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 
 	<div class="max-w-huge mx-auto">
 		<div class="flex md:flex-row flex-col gap-y-14 items-center w-full justify-between gap-x-5">
-			<?php $djun_kartinka = get_field( 'kartinka' ); ?>
-			<?php if ( $djun_kartinka ) : ?>
+
+			<?php if ( have_rows( 'slajder_kartinok' ) ) : ?>
 				<div class="relative md:order-1 order-2">
 					<svg class="absolute -z-50 opacity-0">
 						<defs>
@@ -89,12 +89,20 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						</svg>
 					<?php endif; ?>
 
-					<img src="<?php echo esc_url( $djun_kartinka['url'] ); ?>"
-						 class="relative z-30 object-cover object-center xl:w-[779px] h-auto lg:w-[585px] w-full"
-						 width="<?php echo esc_attr( $djun_kartinka['width'] / 2 ); ?>"
-						 height="<?php echo esc_attr( $djun_kartinka['height'] / 2 ); ?>"
-						 style="clip-path: url(#mask-3d-tour-image); aspect-ratio: 779/708;"
-						 alt="<?php echo esc_attr( $djun_kartinka['alt'] ); ?>"/>
+					<?php
+					while ( have_rows( 'slajder_kartinok' ) ) :
+						the_row();
+						?>
+						<?php $djun_kartinka = get_sub_field( 'kartinka' ); ?>
+						<?php if ( $djun_kartinka ) : ?>
+							<img src="<?php echo esc_url( $djun_kartinka['url'] ); ?>"
+								 class="relative z-30 object-cover object-center xl:w-[779px] h-auto lg:w-[585px] w-full three-d-tour-slide"
+								 width="<?php echo esc_attr( $djun_kartinka['width'] / 2 ); ?>"
+								 height="<?php echo esc_attr( $djun_kartinka['height'] / 2 ); ?>"
+								 style="clip-path: url(#mask-3d-tour-image); aspect-ratio: 779/708;"
+								 alt="<?php echo esc_attr( $djun_kartinka['alt'] ); ?>"/>
+						<?php endif; ?>
+					<?php endwhile; ?>
 				</div>
 			<?php endif; ?>
 

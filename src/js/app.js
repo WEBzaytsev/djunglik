@@ -8,6 +8,7 @@ import { Menu } from './Menu.js';
 import * as fslightbox from 'fslightbox';
 import { ValuesSlider } from './ValuesSlider.js';
 import { FeedbackForm } from './FeedbackForm.js';
+import { ThreeDTourBlock } from './ThreeDTourBlock.js';
 
 (function () {
 	const modalFormButtons = [
@@ -47,5 +48,6 @@ import { FeedbackForm } from './FeedbackForm.js';
 	NewsSlider();
 	ServicesSlider();
 	ServicesTabs();
+	ThreeDTourBlock();
 	ValuesSlider();
 })();

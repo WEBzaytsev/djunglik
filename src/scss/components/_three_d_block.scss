@@ -1,0 +1,13 @@
+.three-d-tour-slide {
+  display: none;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
