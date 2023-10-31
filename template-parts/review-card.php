@@ -18,11 +18,22 @@ $djun_words = explode( ' ', $djun_text );
 <div class="bg-white xl:p-12.5 md:p-8 p-6 rounded-25 h-auto <?php echo esc_attr( is_front_page() || $djun_is_modal ? 'md:mr-8 mr-4' : '' ); ?>">
 	<?php endif; ?>
 	<div class="flex md:items-center items-start md:gap-x-8 gap-x-4">
+		<svg class="absolute -z-50 opacity-0">
+			<defs>
+				<clipPath id="avatar-mask-path" clipPathUnits="objectBoundingBox">
+					<path d="M0.024335 0.340546C-0.0503556 0.533543 0.0561717 0.734753 0.217474 0.867687C0.372411 0.995376 0.586057 1.04757 0.761009 0.947664C0.945049 0.842569 1.03339 0.631268 0.988448 0.427429C0.940594 0.210383 0.778437 0.0223388 0.552507 0.0019788C0.320806 -0.0189013 0.106748 0.127595 0.024335 0.340546Z"
+						  fill="white"/>
+				</clipPath>
+			</defs>
+		</svg>
+
 		<?php $djun_avatarka = get_field( 'avatarka', $djun_otzyv_id ); ?>
 		<?php if ( $djun_avatarka ) : ?>
 			<img src="<?php echo esc_url( $djun_avatarka['url'] ); ?>"
 				 width="70"
 				 height="70"
+				 style="clip-path: url(#avatar-mask-path); aspect-ratio: 69/70;"
+				 class="object-cover object-center"
 				 alt="<?php echo esc_attr( $djun_avatarka['alt'] ); ?>"/>
 		<?php endif; ?>
 

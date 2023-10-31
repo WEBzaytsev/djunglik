@@ -34,6 +34,7 @@ get_header();
 								<a href="<?php echo esc_url( get_the_permalink( $djun_previous_post->ID ) ); ?>">
 									<?php $djun_avatarka = get_field( 'avatarka', $djun_previous_post->ID ); ?>
 									<img src="<?php echo esc_url( $djun_avatarka['url'] ); ?>"
+										 style="clip-path: url(#avatar-mask-path); aspect-ratio: 69/70;"
 										 class="object-cover object-center lg:w-[78px] w-[67px] lg:h-[78px] h-[67px] rounded-25"
 										 alt="img">
 								</a>
@@ -62,6 +63,7 @@ get_header();
 								   class="md:order-2 order-1">
 									<?php $djun_avatarka = get_field( 'avatarka', $djun_next_post->ID ); ?>
 									<img src="<?php echo esc_url( $djun_avatarka['url'] ); ?>"
+										 style="clip-path: url(#avatar-mask-path); aspect-ratio: 69/70;"
 										 class="object-cover object-center lg:w-[78px] w-[67px] lg:h-[78px] h-[67px] rounded-25"
 										 alt="img">
 								</a>
