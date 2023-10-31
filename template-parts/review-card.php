@@ -47,7 +47,7 @@ $djun_words = explode( ' ', $djun_text );
 		</div>
 	</div>
 
-	<?php if ( $djun_is_modal && $djun_yandex_url ) : ?>
+	<?php if ( ( $djun_is_modal || is_singular( 'reviews' ) ) && $djun_yandex_url ) : ?>
 		<a href="<?php echo esc_url( $djun_yandex_url ); ?>"
 		   target="_blank"
 		   class="text-ochre md:text-pure-text-pc text-pure-text-base hover:underline md:mt-8 mt-4 block">
@@ -55,10 +55,10 @@ $djun_words = explode( ' ', $djun_text );
 		</a>
 	<?php endif; ?>
 
-	<p class="xl:mt-8 mt-4 <?php echo esc_attr( $djun_is_modal ? '' : 'line-clamp-3' ); ?>">
+	<p class="xl:mt-8 mt-4 <?php echo esc_attr( $djun_is_modal || is_singular( 'reviews' ) ? '' : 'line-clamp-3' ); ?>">
 		<?php echo wp_kses_post( $djun_text ); ?>
 	</p>
-	<?php if ( ! is_front_page() && ! $djun_is_modal ) : ?>
+	<?php if ( ! is_front_page() && ! $djun_is_modal && ! is_singular( 'reviews' ) ) : ?>
 		<?php if ( $djun_yandex_url || ( count( $djun_words ) > $djun_max_words ) ) : ?>
 			<div class="mt-8 flex w-full items-center justify-between">
 				<span class="text-sm border-dashed border-grey-900 border-b text-grey-900 cursor-pointer"

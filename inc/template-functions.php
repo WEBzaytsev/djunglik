@@ -94,6 +94,10 @@ function djun_breadcrumbs(): void {
 			echo '<a class="hover:underline" href="' . esc_url( get_the_permalink( 155 ) ) . '">Новости</a>';
 			echo wp_kses_post( $separator );
 			echo '<span class="text-grey-200">' . esc_html( get_the_title() ) . '</span>';
+		} elseif ( is_singular( 'reviews' ) ) {
+			echo '<a class="hover:underline" href="' . esc_url( get_the_permalink( 143 ) ) . '">Отзывы</a>';
+			echo wp_kses_post( $separator );
+			echo '<span class="text-grey-200">' . esc_html( get_the_title() ) . '</span>';
 		} elseif ( is_single() ) {
 			echo wp_kses_post( $separator );
 			echo '<span class="text-grey-200">' . esc_html( get_the_title() ) . '</span>';
