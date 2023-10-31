@@ -15,7 +15,7 @@ get_header();
 	<main class="relative lg:overflow-visible overflow-hidden">
 		<?php djun_breadcrumbs(); ?>
 
-		<div class="px-5 mb-[150px]">
+		<div class="px-5 mb-[250px]">
 			<div class="max-w-huge mx-auto mt-2">
 				<div class="lg:grid lg:grid-cols-post lg:max-w-none max-w-[800px] relative gap-8 lg:mb-24 mb-12">
 					<div class="relative z-20">
