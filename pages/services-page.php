@@ -341,7 +341,7 @@ get_header(); ?>
 											<div class="md:block grid grid-cols-[161px_auto] gap-x-2">
 												<?php $djun_czena_za_mesyacz = get_sub_field( 'czena_za_mesyacz' ); ?>
 												<?php if ( $djun_czena_za_mesyacz ) : ?>
-													<p class="md:mb-1 text-grey-900 text-sm whitespace-nowrap">Меяц</p>
+													<p class="md:mb-1 text-grey-900 text-sm whitespace-nowrap">Месяц</p>
 													<p class="md:font-unbounded md:font-medium xl:text-heading-4-pc md:text-pure-text-pc text-sm whitespace-nowrap">
 														<?php echo esc_html( djun_format_price( $djun_czena_za_mesyacz ) ); ?>
 													</p>
