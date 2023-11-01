@@ -1,22 +1,29 @@
-let slideIndex = 0;
+export class ThreeDTourBlock {
+	images = document.querySelectorAll('.fade-in-slide');
+	currentIndex = 0;
 
-export const ThreeDTourBlock = () => {
-	const images = [...document.querySelectorAll('.three-d-tour-slide')];
+	constructor() {
+		if (!this.images.length) return;
 
-	if (!images.length) return;
-
-	let i;
-
-	for (i = 0; i < images.length; i++) {
-		images[i].style.display = 'none';
+		this.showImage(this.currentIndex);
+		setTimeout(this.fadeInNextImage.bind(this), 2000);
 	}
 
-	slideIndex++;
-	if (slideIndex > images.length) {
-		slideIndex = 1;
+	showImage(index) {
+		this.images[index].style.opacity = 1;
+		this.images[index].style.visibility = 'visible';
 	}
 
-	images[slideIndex - 1].style.display = 'block';
+	hideImage(index) {
+		this.images[index].style.opacity = 0;
+		this.images[index].style.visibility = 'hidden';
+	}
 
-	setTimeout(ThreeDTourBlock, 3000);
-};
+	fadeInNextImage() {
+		this.hideImage(this.currentIndex);
+		this.currentIndex = (this.currentIndex + 1) % this.images.length;
+		this.showImage(this.currentIndex);
+
+		setTimeout(this.fadeInNextImage.bind(this), 2000);
+	}
+}

@@ -48,6 +48,6 @@ import { ThreeDTourBlock } from './ThreeDTourBlock.js';
 	NewsSlider();
 	ServicesSlider();
 	ServicesTabs();
-	ThreeDTourBlock();
+	new ThreeDTourBlock();
 	ValuesSlider();
 })();

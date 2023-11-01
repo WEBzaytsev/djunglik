@@ -90,18 +90,20 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 					<?php endif; ?>
 
 					<?php
+					$djun_img_count = 0;
 					while ( have_rows( 'slajder_kartinok' ) ) :
 						the_row();
 						?>
 						<?php $djun_kartinka = get_sub_field( 'kartinka' ); ?>
 						<?php if ( $djun_kartinka ) : ?>
 							<img src="<?php echo esc_url( $djun_kartinka['url'] ); ?>"
-								 class="relative z-30 object-cover object-center xl:w-[779px] h-auto lg:w-[585px] w-full three-d-tour-slide"
+								 class="z-30 fade-in-slide object-cover object-center xl:w-[779px] h-auto lg:w-[585px] w-full three-d-tour-slide <?php echo esc_attr( 0 === $djun_img_count ? 'relative' : 'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' ); ?>"
 								 width="<?php echo esc_attr( $djun_kartinka['width'] / 2 ); ?>"
 								 height="<?php echo esc_attr( $djun_kartinka['height'] / 2 ); ?>"
-								 style="clip-path: url(#mask-3d-tour-image); aspect-ratio: 779/708;"
+								 style="clip-path: url(#mask-3d-tour-image); aspect-ratio: 779/708;opacity: <?php echo esc_attr( 0 === $djun_img_count ? '1' : '0' ); ?>"
 								 alt="<?php echo esc_attr( $djun_kartinka['alt'] ); ?>"/>
 						<?php endif; ?>
+						<?php $djun_img_count++; ?>
 					<?php endwhile; ?>
 				</div>
 			<?php endif; ?>
