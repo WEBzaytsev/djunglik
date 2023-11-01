@@ -32,7 +32,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 		<div class="flex md:flex-row flex-col gap-y-14 items-center w-full justify-between gap-x-5">
 
 			<?php if ( have_rows( 'slajder_kartinok' ) ) : ?>
-				<div class="relative md:order-1 order-2">
+				<div class="relative md:order-1 order-2 md:w-auto w-full">
 					<svg class="absolute -z-50 opacity-0">
 						<defs>
 							<clipPath id="mask-3d-tour-image" clipPathUnits="objectBoundingBox">
@@ -89,24 +89,26 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						</svg>
 					<?php endif; ?>
 
-					<?php
-					$djun_img_count = 0;
-					while ( have_rows( 'slajder_kartinok' ) ) :
-						the_row();
-						?>
-						<?php $djun_kartinka = get_sub_field( 'kartinka' ); ?>
-						<?php if ( $djun_kartinka ) : ?>
-					<figure class="z-30 xl:w-[779px] lg:w-[585px] w-full <?php echo esc_attr( 0 === $djun_img_count ? 'relative' : 'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' ); ?>">
-						<img src="<?php echo esc_url( $djun_kartinka['url'] ); ?>"
-							 class="block transition-all duration-[2s] object-cover object-center h-auto w-full three-d-tour-slide <?php echo esc_attr( 0 === $djun_img_count ? 'opacity-100 visible' : 'opacity-0 invisible' ); ?>"
-							 width="<?php echo esc_attr( $djun_kartinka['width'] / 2 ); ?>"
-							 height="<?php echo esc_attr( $djun_kartinka['height'] / 2 ); ?>"
-							 style="clip-path: url(#mask-3d-tour-image); aspect-ratio: 779/708;"
-							 alt="<?php echo esc_attr( $djun_kartinka['alt'] ); ?>"/>
-					</figure>
-						<?php endif; ?>
-						<?php $djun_img_count++; ?>
-					<?php endwhile; ?>
+					<div class="relative z-30 virtual-tour-slider xl:w-[779px] lg:w-[585px] w-full overflow-hidden">
+						<div class="">
+							<?php
+							while ( have_rows( 'slajder_kartinok' ) ) :
+								the_row();
+								?>
+								<?php $djun_kartinka = get_sub_field( 'kartinka' ); ?>
+								<?php if ( $djun_kartinka ) : ?>
+									<figure class=" ">
+										<img src="<?php echo esc_url( $djun_kartinka['url'] ); ?>"
+											 class="block object-cover object-center h-auto w-full"
+											 width="<?php echo esc_attr( $djun_kartinka['width'] / 2 ); ?>"
+											 height="<?php echo esc_attr( $djun_kartinka['height'] / 2 ); ?>"
+											 style="clip-path: url(#mask-3d-tour-image); aspect-ratio: 779/708;"
+											 alt="<?php echo esc_attr( $djun_kartinka['alt'] ); ?>"/>
+									</figure>
+								<?php endif; ?>
+							<?php endwhile; ?>
+						</div>
+					</div>
 				</div>
 			<?php endif; ?>
 
