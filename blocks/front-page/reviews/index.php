@@ -61,36 +61,54 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	</div>
 
 	<div class="max-w-huge mx-auto relative z-10 md:pb-15 pb-12">
-		<?php if ( have_rows( 'spisok_otzyvov' ) ) : ?>
-			<div class="reviews-slider">
-				<div class="xl:max-w-[710px] md:max-w-[500px] max-w-[300px]">
-					<?php
-					while ( have_rows( 'spisok_otzyvov' ) ) :
+		<div class="reviews-slider">
+			<div class="xl:max-w-[710px] md:max-w-[500px] max-w-[300px]">
+				<?php
+				if ( have_rows( 'spisok_otzyvov' ) ) {
+
+					while ( have_rows( 'spisok_otzyvov' ) ) {
 						the_row();
-						?>
-						<?php $djun_otzyv_id = get_sub_field( 'otzyv' ); ?>
-						<?php
+
+						$djun_otzyv_id = get_sub_field( 'otzyv' );
+
 						if ( $djun_otzyv_id ) {
 							get_template_part( '/template-parts/review', 'card', [ 'review_id' => $djun_otzyv_id ] );
 						}
-						?>
-					<?php endwhile; ?>
-				</div>
+					}
+				} else {
+					$djun_args = [
+						'status' => 'published',
+						'post_type' => 'reviews',
+						'posts_per_page' => 10,
+					];
+					$djun_query = new WP_Query( $djun_args );
+
+					if ( $djun_query->have_posts() ) {
+						while ( $djun_query->have_posts() ) {
+							$djun_query->the_post();
+							get_template_part( '/template-parts/review', 'card', [ 'review_id' => get_the_ID() ] );
+						}
+					}
+					wp_reset_postdata();
+				}
+				?>
 			</div>
-		<?php endif; ?>
+		</div>
 	</div>
 
 	<div class="relative z-30 max-w-huge mx-auto w-full flex items-end justify-between">
 		<div class="reviews-slider-pagination flex gap-x-5.5"></div>
 
 		<div class="md:flex hidden items-center gap-x-12">
-			<svg width="22" height="39" class="reviews-slider-button-prev cursor-pointer" viewBox="0 0 22 39" fill="none"
+			<svg width="22" height="39" class="reviews-slider-button-prev cursor-pointer" viewBox="0 0 22 39"
+				 fill="none"
 				 xmlns="http://www.w3.org/2000/svg">
 				<path d="M19 3L3 19.5L19 36" stroke="white" stroke-width="5" stroke-linecap="round"
 					  stroke-linejoin="round"/>
 			</svg>
 
-			<svg class="reviews-slider-button-next cursor-pointer" width="22" height="39" viewBox="0 0 22 39" fill="none"
+			<svg class="reviews-slider-button-next cursor-pointer" width="22" height="39" viewBox="0 0 22 39"
+				 fill="none"
 				 xmlns="http://www.w3.org/2000/svg">
 				<path d="M3 3L19 19.5L3 36" stroke="white" stroke-width="5" stroke-linecap="round"
 					  stroke-linejoin="round"/>
