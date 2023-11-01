@@ -5,4 +5,6 @@
   -webkit-opacity: 0; /* For Safari */
   -webkit-visibility: hidden; /* For Safari */
   -webkit-transition: all 2s ease-in-out; /* For Safari */
+  -moz-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
 }
