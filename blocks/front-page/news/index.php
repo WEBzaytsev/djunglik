@@ -54,9 +54,10 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 
 		<div class="news-slider">
 			<div class="">
-				<?php if ( have_rows( 'slajder_novostej' ) ) : ?>
-					<?php
-					while ( have_rows( 'slajder_novostej' ) ) :
+				<?php
+				if ( have_rows( 'slajder_novostej' ) ) {
+
+					while ( have_rows( 'slajder_novostej' ) ) {
 						the_row();
 
 						$djun_post_id = get_sub_field( 'post' );
@@ -64,9 +65,24 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 						if ( $djun_post_id ) {
 							get_template_part( '/template-parts/post', 'card', [ 'post_id' => $djun_post_id ] );
 						}
-						?>
-					<?php endwhile; ?>
-				<?php endif; ?>
+					}
+				} else {
+					$djun_args = [
+						'status' => 'published',
+						'post_type' => 'post',
+						'posts_per_page' => 10,
+					];
+					$djun_query = new WP_Query( $djun_args );
+
+					if ( $djun_query->have_posts() ) {
+						while ( $djun_query->have_posts() ) {
+							$djun_query->the_post();
+							get_template_part( '/template-parts/post', 'card', [ 'post_id' => get_the_ID() ] );
+						}
+					}
+					wp_reset_postdata();
+				}
+				?>
 			</div>
 
 			<div class="relative md:mt-16 mt-12 w-full flex items-end justify-between">
