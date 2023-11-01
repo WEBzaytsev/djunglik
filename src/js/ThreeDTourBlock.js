@@ -11,12 +11,12 @@ export class ThreeDTourBlock {
 
 	showImage(index) {
 		this.images[index].style.opacity = 1;
-		// this.images[index].style.visibility = 'visible';
+		this.images[index].style.visibility = 'visible';
 	}
 
 	hideImage(index) {
 		this.images[index].style.opacity = 0;
-		// this.images[index].style.visibility = 'hidden';
+		this.images[index].style.visibility = 'hidden';
 	}
 
 	fadeInNextImage() {
