@@ -1,5 +1,5 @@
 export class ThreeDTourBlock {
-	images = document.querySelectorAll('.fade-in-slide');
+	images = document.querySelectorAll('.three-d-tour-slide');
 	currentIndex = 0;
 
 	constructor() {
