@@ -24,7 +24,7 @@
 $djun_block_slug = '3d-tour';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-10 px-5 md:mt-[256px] mt-[145px] md:mb-[170px] mb-[110px]';
+$djun_classes = 'relative z-10 px-5 md:mt-[256px] mt-[145px] md:mb-[300px] mb-[110px]';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 

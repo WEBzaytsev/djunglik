@@ -1,0 +1,15 @@
+{
+    "name": "acf/come-to-visit",
+    "title": "Come To Visit",
+    "description": "Come To Visit",
+    "category": "other",
+    "icon": "align-left",
+    "apiVersion": 2,
+    "keywords": [
+        "come to visit"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php"
+    }
+}

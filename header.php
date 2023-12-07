@@ -50,7 +50,7 @@
 		</div>
 	</div>
 </div>
-<div id="page" class="relative z-10">
+<div id="page" class="relative z-10 overflow-x-hidden">
 
 	<header class="px-5 relative">
 		<div class="absolute z-10 -top-10 -bottom-1 w-full bg-ochre left-0 transition-all duration-300 mob-menu-header-bg -translate-x-[120vw]"

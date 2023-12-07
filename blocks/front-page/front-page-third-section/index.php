@@ -24,7 +24,7 @@
 $djun_block_slug = 'front-page-third-section';
 $djun_is_admin = is_admin();
 
-$djun_classes = 'relative z-10 xl:mt-[247px] mt-[150px] px-5 xl:pb-0 lg:pb-10 pb-40';
+$djun_classes = 'relative z-10 xl:mt-[350px] mt-[150px] px-5 xl:pb-0 lg:pb-10 pb-40';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
