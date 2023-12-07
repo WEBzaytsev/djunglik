@@ -1,0 +1,15 @@
+{
+    "name": "acf/feedback-form-2",
+    "title": "Feedback Form 2",
+    "description": "Feedback Form 2",
+    "category": "other",
+    "icon": "align-left",
+    "apiVersion": 2,
+    "keywords": [
+        "feedback form 2"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php"
+    }
+}

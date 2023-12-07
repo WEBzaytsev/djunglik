@@ -11,7 +11,7 @@ use JetBrains\PhpStorm\NoReturn;
 
 if ( ! defined( 'DJUNGLIK_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'DJUNGLIK_VERSION', '1.0.20' );
+	define( 'DJUNGLIK_VERSION', '1.0.21' );
 }
 
 /**
@@ -273,7 +273,14 @@ add_action( 'init', 'djun_teachers_post_type' );
 		$nonce = sanitize_text_field( wp_unslash( $_POST['feedback_form_nonce'] ) );
 		if ( wp_verify_nonce( $nonce, 'feedback_form_nonce' ) ) {
 			ob_start();
-			get_template_part( 'template-parts/feedback-form', null, [ 'is_modal' => true ] );
+			get_template_part(
+				'template-parts/feedback-form',
+				null,
+				[
+					'is_modal' => true,
+					'form_id' => '344',
+				]
+			);
 			$form = ob_get_clean();
 			wp_send_json_success( $form );
 		} else {
