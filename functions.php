@@ -11,7 +11,7 @@ use JetBrains\PhpStorm\NoReturn;
 
 if ( ! defined( 'DJUNGLIK_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'DJUNGLIK_VERSION', '1.0.19' );
+	define( 'DJUNGLIK_VERSION', '1.0.20' );
 }
 
 /**
