@@ -24,7 +24,7 @@
 $djun_block_slug = 'telegram-bot';
 $djun_is_admin = is_admin();
 
-$djun_classes  = 'relative z-30 xl:mt-5 md:pt-[100px] pt-20 md:pb-10 pb-0 bg-white px-5 mb-[250px]';
+$djun_classes  = 'relative z-30 xl:mt-5 md:pt-[100px] pt-20 md:pb-10 pb-0 bg-white px-5 md:mb-[250px] mb-10';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
