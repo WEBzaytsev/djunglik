@@ -55,7 +55,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 				[
 					'is_form_section' => true,
 					'form_title' => get_field( 'zagolovok_formi' ),
-					'form_id' => '',
+					'form_id' => '588',
 				]
 			);
 			?>
@@ -82,10 +82,6 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			</div>
 		<?php endif; ?>
 	</div>
-</div>
-
-<div class="hidden">
-	<?php echo do_shortcode( '[contact-form-7 id="0931458" title="Форма с указанием возраста"]' ); ?>
 </div>
 
 <?php
