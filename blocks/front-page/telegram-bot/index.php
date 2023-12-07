@@ -1,8 +1,8 @@
 <?php
 /**
- * Block template file: blocks/front-page/come-to-visit/index.php
+ * Block template file: blocks/front-page/telegram-bot/index.php
  *
- * Come To Visit Block Template.
+ * Telegram Bot Block Template.
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -21,10 +21,10 @@
  * @hooked djun_custom_block_start - 10
  */
 
-$djun_block_slug = 'come-to-visit';
+$djun_block_slug = 'telegram-bot';
 $djun_is_admin = is_admin();
 
-$djun_classes  = 'relative z-20 xl:mt-5 md:pt-0 pt-20 md:pb-0 pb-15 bg-white px-5';
+$djun_classes  = 'relative z-30 xl:mt-5 md:pt-[100px] pt-20 md:pb-10 pb-0 bg-white px-5 mb-[250px]';
 do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 ?>
 
@@ -41,9 +41,10 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			  fill="white"/>
 	</svg>
 <?php endif; ?>
+
 	<div class="relative z-30 max-w-huge mx-auto">
-		<div class="md:flex items-center lg:gap-x-[62px] gap-x-5">
-			<div class="lg:max-w-[386px] md:max-w-[50%] shrink-0 grow-0 md:mb-0 mb-13.5">
+		<div class="md:flex items-center lg:gap-x-[62px] gap-x-5 relative z-20">
+			<div class="lg:max-w-[416px] md:max-w-[50%] shrink-0 grow-0 md:mb-0 mb-13.5">
 				<h3 class="font-unbounded xl:text-heading-2-pc md:text-heading-3-pc text-heading-1-mob mb-8 font-bold">
 					<?php the_field( 'zagolovok' ); ?>
 				</h3>
@@ -53,44 +54,23 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 				<?php $djun_knopka = get_field( 'knopka' ); ?>
 				<?php if ( $djun_knopka ) : ?>
 					<a href="<?php echo esc_url( $djun_knopka['url'] ); ?>"
-					   class="bg-ochre duration-300 transition-all hover:bg-ochre-500 rounded-60 px-16 pt-4 pb-5 font-extrabold text-pure-text-pc flex items-center justify-center gap-6 w-full max-w-[285px]"
+					   class="bg-[#28A4FD] duration-300 transition-all hover:bg-white border-2 border-[#28A4FD] rounded-60 px-16 pt-4 pb-5 font-extrabold text-pure-text-pc flex items-center justify-center gap-6 w-full group max-w-[350px]"
 					   target="<?php echo esc_attr( $djun_knopka['target'] ); ?>">
-						<span><?php echo esc_html( $djun_knopka['title'] ); ?></span>
-						<svg width="27" height="15" viewBox="0 0 27 15" fill="none">
-							<path id="Line 1"
-								  d="M26.7071 8.20711C27.0976 7.81658 27.0976 7.18342 26.7071 6.79289L20.3431 0.428932C19.9526 0.0384078 19.3195 0.0384078 18.9289 0.428932C18.5384 0.819457 18.5384 1.45262 18.9289 1.84315L24.5858 7.5L18.9289 13.1569C18.5384 13.5474 18.5384 14.1805 18.9289 14.5711C19.3195 14.9616 19.9526 14.9616 20.3431 14.5711L26.7071 8.20711ZM0 8.5H26V6.5H0V8.5Z"
-								  fill="#333333"/>
+						<span class="text-white group-hover:text-[#28A4FD] duration-300 transition-all"><?php echo esc_html( $djun_knopka['title'] ); ?></span>
+						<svg width="26" height="25" viewBox="0 0 26 25" fill="none">
+							<path d="M24.4285 3.78564L1.57135 11.9489L8.10196 15.2142L17.8979 8.6836L11.3673 16.8469L21.1632 23.3775L24.4285 3.78564Z"
+								  stroke-width="2" stroke-linejoin="round"
+								  class="stroke-white group-hover:stroke-[#28A4FD] duration-300 transition-all"/>
 						</svg>
 					</a>
 				<?php endif; ?>
 			</div>
-			<div class="relative md:ml-0 -ml-6">
-				<?php $djun_kartinka = get_field( 'kartinka' ); ?>
-				<?php if ( $djun_kartinka ) : ?>
-					<div class="relative z-10 order-1">
-						<?php if ( ! $djun_is_admin ) : ?>
-							<div class="absolute z-10 lg:-top-11.5 -top-5 left-auto lg:-right-6 -right-5 lg:w-auto w-[70%]">
-								<?php get_template_part( '/vector-images/front-page-come-to-visit', 'img-bg' ); ?>
-							</div>
-						<?php endif; ?>
-
-						<img src="<?php echo esc_url( $djun_kartinka['url'] ); ?>"
-							 class="relative z-20"
-							 width="<?php echo esc_attr( $djun_kartinka['width'] / 2 ); ?>"
-							 height="<?php echo esc_attr( $djun_kartinka['height'] / 2 ); ?>"
-							 alt="<?php echo esc_attr( $djun_kartinka['alt'] ); ?>"/>
-
-					</div>
-				<?php endif; ?>
-			</div>
+		</div>
+		<div class="md:absolute z-10 md:w-[66.5%] w-[75%] md:mx-0 mx-auto -top-24.5 left-auto -right-[8.33%]">
+			<?php get_template_part( '/vector-images/tg-bot-section-img' ); ?>
 		</div>
 	</div>
 
-<?php if ( ! $djun_is_admin ) : ?>
-	<div class="absolute z-30 left-auto  -right-[125px] -bottom-[300px] top-auto lg:block hidden">
-		<?php get_template_part( '/vector-images/front-page-come-to-visit-leaves-right' ); ?>
-	</div>
-<?php endif; ?>
 <?php
 
 /**

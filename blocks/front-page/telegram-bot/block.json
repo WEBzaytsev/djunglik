@@ -1,0 +1,15 @@
+{
+    "name": "acf/telegram-bot",
+    "title": "Telegram Bot",
+    "description": "Telegram Bot",
+    "category": "other",
+    "icon": "align-left",
+    "apiVersion": 2,
+    "keywords": [
+        "telegram bot"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php"
+    }
+}

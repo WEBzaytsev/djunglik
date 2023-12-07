@@ -8,4 +8,5 @@ function register_acf_blocks() {
     register_block_type( __DIR__ . '/blocks/front-page/front-page-third-section' );
     register_block_type( __DIR__ . '/blocks/front-page/news' );
     register_block_type( __DIR__ . '/blocks/front-page/reviews' );
+    register_block_type( __DIR__ . '/blocks/front-page/telegram-bot' );
 }
