@@ -84,6 +84,10 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 	</div>
 </div>
 
+<div class="hidden">
+	<?php echo do_shortcode( '[contact-form-7 id="0931458" title="Форма с указанием возраста"]' ); ?>
+</div>
+
 <?php
 
 /**
