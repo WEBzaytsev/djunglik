@@ -1,4 +1,4 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
     <g clip-path="url(#clip0_123_4374)">
         <path d="M38 20.4C38 33 24 42 24 42C24 42 10 33 10 20.4C10 12.44 16.26 6 24 6C31.74 6 38 12.44 38 20.4Z"
               stroke="#333333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>

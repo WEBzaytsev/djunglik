@@ -1,4 +1,4 @@
-<svg width="348" height="275" viewBox="0 0 348 275" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="348" height="275" viewBox="0 0 348 275" fill="none">
     <g clip-path="url(#clip0_1004_6812)">
         <path fill-rule="evenodd" clip-rule="evenodd"
               d="M73.8007 271.606C73.8007 271.606 99.4985 173.642 78.5275 136.011L69.1212 270.711L73.8007 271.606Z"

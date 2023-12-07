@@ -51,7 +51,7 @@ do_action( 'djun_custom_block_init', $block, $djun_block_slug, $djun_classes );
 			   data-modal="form"
 			   class="bg-red hover:bg-red-500 transition-all duration-300 rounded-60 md:px-16 px-5 pt-4 pb-5 text-white font-extrabold text-pure-text-pc flex items-center justify-center gap-6 md:w-fit w-full md:max-w-none max-w-[320px] whitespace-nowrap">
 				<span><?php the_field( 'tekst_knopki' ); ?></span>
-				<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<svg width="27" height="15" viewBox="0 0 27 15" fill="none">
 					<path id="Line 1"
 						  d="M26.7071 8.20711C27.0976 7.81658 27.0976 7.18342 26.7071 6.79289L20.3431 0.428932C19.9526 0.0384078 19.3195 0.0384078 18.9289 0.428932C18.5384 0.819457 18.5384 1.45262 18.9289 1.84315L24.5858 7.5L18.9289 13.1569C18.5384 13.5474 18.5384 14.1805 18.9289 14.5711C19.3195 14.9616 19.9526 14.9616 20.3431 14.5711L26.7071 8.20711ZM0 8.5H26V6.5H0V8.5Z"
 						  fill="white"/>

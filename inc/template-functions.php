@@ -118,11 +118,11 @@ function djun_breadcrumbs(): void {
 function djun_pagination( ?WP_Query $query ): void {
 	$djun_paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-	$djun_prev_link = '<svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+	$djun_prev_link = '<svg width="16" height="27" viewBox="0 0 16 27" fill="none">
 <path d="M14.0001 1.5L2.36376 13.5L14.0001 25.5" class="' . ( $djun_paged > 1 ? 'stroke-grey' : 'stroke-grey-200' ) . '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>';
 	$djun_prev_link = $djun_paged > 1 ? '<a href="' . esc_url( get_previous_posts_page_link() ) . '">' . $djun_prev_link . '</a>' : $djun_prev_link;
-	$djun_next_link = '<svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+	$djun_next_link = '<svg width="16" height="27" viewBox="0 0 16 27" fill="none">
 <path d="M2 1.5L13.6364 13.5L2 25.5" class="' . ( $djun_paged < $query->max_num_pages ? 'stroke-grey' : 'stroke-grey-200' ) . '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>';
 	$djun_next_link = $djun_paged < $query->max_num_pages ? '<a href="' . esc_url( get_next_posts_page_link() ) . '">' . $djun_next_link . '</a>' : $djun_next_link;

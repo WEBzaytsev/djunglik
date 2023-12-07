@@ -1,6 +1,6 @@
 <svg width="1440" height="327"
      class="lg:w-full md:w-full w-[1000px] h-auto"
-     viewBox="0 0 1440 327" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+     viewBox="0 0 1440 327" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g clip-path="url(#clip0_1020_8175)">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 151H0V234C406 350.569 1049 349.564 1440 275.201V234V151Z"
               fill="#FD9B28"/>
